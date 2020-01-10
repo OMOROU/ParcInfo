@@ -1,0 +1,76 @@
+{% extends "base.html" %}{% load staticfiles %} {% block title %}
+<title>Liste_type_Materiel</title>{% endblock title %}{% block content %}
+<div class="container">
+    <br />
+    <br />
+
+
+    <div class="right_col" role="main">
+        <div class="">
+
+            <div class="col-md-12 col-sm-12  ">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>liste des types de Materiel</h2>
+                        <div class="add-product">
+                            <a href="{% url 'parc:types_materiel' %}">Ajouter Type_materiel</a>
+                        </div>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <h2> </h2>
+                    <div class="x_content">
+                        <div class="table-responsive">
+                            <table class="table table-striped jambo_table bulk_action">
+                                <thead>
+                                    <tr class="headings">
+                                        <th>
+                                            <input type="checkbox" id="check-all" class="flat">
+                                        </th>
+                                        <th class="column-title">#</th>
+                                        <th class="column-title">Libelle Type_materiel </th>
+                                        <th class="column-title">Description</th>
+                                        <th class="column-title no-link last"><span class="nobr">Action</span>
+                                        </th>
+                                        <th class="bulk-actions" colspan="7">
+                                            <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                {% for types_materiels in types_materiel %}
+
+                                <tbody>
+                                    <tr class="odd pointer">
+                                        <td class="a-center ">
+                                            <input type="checkbox" class="flat" name="table_records">
+                                        </td>
+                                        <td class=" "></td>
+                                        <td class=" ">{{types_materiels.libelle_materiel}}</td>
+                                        <td class=" ">{{types_materiels.description}}</td>
+                                        <td class=" last">
+                                            <ul>
+                                                <a href="{% url 'parc:onetypemater' types_materiels.id %}">Update|</a>
+                                                <a href="{% url 'parc:onetypematerdel' types_materiels.id %}">Delete</a>
+                                            </ul>
+                                        </td>
+                                    </tr>
+
+
+
+                                </tbody>
+                                {% endfor %}
+                            </table>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}

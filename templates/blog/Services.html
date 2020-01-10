@@ -1,0 +1,36 @@
+{% extends "base.html" %}{% load staticfiles %} {% block title %}
+<title>Liste des Bureau</title>{% endblock title %}{% block content %}
+<div class="container">
+    <br />
+    <br />
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="tab-content-details shadow-reset">
+                <h1> Nos Services</h1>
+                <h2>A prpos de nos services, nos departements, bureau et intervenant </h2>
+                <p>These are the Custom Animate Modals Bootstrap. Using animate bounce, flash, pulse, rubberBand, shake, swing, tada, wobble, jello, bounceIn, bounceInDown, bounceInLeft, bounceInRight, bounceInUp, fadeIn, fadeInDown, fadeInDownBig, fadeInLeft,
+                    fadeInLeftBig, fadeInRight, fadeInRightBig, fadeInUp, fadeInUpBig, flipInX, flipInY, lightSpeedIn, rotateIn, rotateInDownLeft, rotateInDownRight, rotateInUpLeft, rotateInUpRight, rollIn, zoomIn, zoomInDown, zoomInLeft, zoomInRight,
+                    zoomInUp etc.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-3  offset-md-5">
+        <!-- <button type="button" class="btn btn-primary">Cancel</button>
+
+        <button type="submit" class="btn btn-success">Submit</button> -->
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="tab-content-details shadow-reset">
+                <a href="{% url 'service:bureau_detail' %}" class="btn btn-primary waves-effect waves-light m-r-10"> Bureau </a>
+                <a href="{% url 'service:departement_detail' %}" class="btn btn-primary waves-effect waves-light m-r-10"> Departement </a>
+                <a href="{% url 'service:intervenant_detail' %}" class="btn btn-primary waves-effect waves-light m-r-10"> Intervenant </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

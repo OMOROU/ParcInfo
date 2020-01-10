@@ -1,0 +1,68 @@
+{% extends "base.html" %}{% load staticfiles %} {% block title %}
+<title>Type de panne</title>{% endblock title %}{% block content %}
+<div class="container">
+    <br />
+    <br />
+
+
+    <div class="right_col" role="main">
+        <div class="">
+
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Enregistrement des types de panne</h3>
+                            <h3> </h3>
+                        </div>
+                        <br />
+                        <br />
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="x_panel">
+
+                                <div class="x_content">
+
+                                    <form class="form-horizontal form-label-left" method="POST" action="{%url 'intervention:add_type_panne' %}">
+                                        {%csrf_token%}
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3" for="first-name">Libelle type_panne: <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-4 col-sm-4 ">
+                                                <input type="text" id="libelle_pan" required="required" name="libelle_pan" value="{{intervention.libelle_pan}}" class="form-control col-md-7 col-xs-12" onKeyPress="return verifieChar(event,0);">
+                                            </div>
+                                            <span class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3" for="first-name">Description type_panne: <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-4 col-sm-4 ">
+                                                <input type="text" id="description" required="required" name="description" value="{{intervention.description}}" class="form-control col-md-7 col-xs-12" onKeyPress="return verifieChar(event,0);">
+                                            </div>
+                                            <span class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+                                        </div>
+                                        <div class="ln_solid"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-9 col-sm-9  offset-md-3">
+                                                <button type="button" class="btn btn-primary">Cancel</button>
+
+                                                <button type="submit" class="btn btn-success">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}

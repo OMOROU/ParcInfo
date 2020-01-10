@@ -1,0 +1,121 @@
+{% extends "base.html" %}{% load staticfiles %} {% block title %}
+<title>Panne</title>{% endblock title %}{% block content %}
+<div class="container">
+
+
+    <div class="right_col" role="main">
+        <div class="">
+
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Enregistrement des Pannes</h3>
+                            <h3> </h3>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="x_panel">
+
+                                <div class="x_content">
+
+                                    <form class="form-horizontal form-label-left" method="POST" action="{%url 'intervention:updatepan' panne.id %}">
+                                        {%csrf_token%}
+
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3" for="first-name">Libelle de Panne: <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-4 col-sm-4 ">
+                                                <input type="text" id="libelle_pan" required="required" name="libelle_pan" value="{{panne.libelle_pan}}" class="form-control col-md-7 col-xs-12" onKeyPress="return verifieChar(event,0);">
+                                            </div>
+                                            <span class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3" for="first-name">Description Panne: <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-4 col-sm-4 ">
+                                                <input type="text" id="description" required="required" name="description" value="{{panne.description}}" class="form-control col-md-7 col-xs-12" onKeyPress="return verifieChar(event,0);">
+                                            </div>
+                                            <span class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+                                        </div>
+                                        <div class="form-group row ">
+                                            <label class="control-label col-md-3 col-sm-3 " for="first-name ">Type de panne : <span class="required ">*</span>
+                                            </label>
+                                            <select class="form control " required id="libelle_pan" name="type_panne" value={{panne.type_panne}}>
+                                                {% for type_panne in type_pannes %}
+                                            <option > {{type_panne}}</option>                         
+                                            {% endfor %}
+                                            </select>
+                                            <!-- <select id="id_departement" class=" control-label col-md-4 col-sm-4 row ">
+                                                {% for category in categories  %}
+                                                  <option value="{{ departement }} ">{{ departement.departement }}</option>
+                                                {% endfor %}
+                                              </select> -->
+                                            <span class="tooltip ">Un nom ne peut pas faire moins de 2 caractères</span>
+                                            <button class="btn btn-lg " style="background-color:red; color:green " onclick=window.location.href='http://127.0.0.1:8000/service/departement' ; value=departement>
+                                                <i class="fa fa-plus "></i> 
+                                             </button>
+                                        </div>
+                                        <div class="form-group row ">
+                                            <label class="control-label col-md-3 col-sm-3 " for="first-name ">Intervenant : <span class="required ">*</span>
+                                            </label>
+                                            <select class="form control " required id="nom_intervenant" name="intervenant" value={{panne.intervenant}}>
+                                                {% for intervenant in intervenants %}
+                                            <option > {{intervenant}}</option>                         
+                                            {% endfor %}
+                                            </select>
+                                            <!-- <select id="id_departement" class=" control-label col-md-4 col-sm-4 row ">
+                                                {% for category in categories  %}
+                                                  <option value="{{ departement }} ">{{ departement.departement }}</option>
+                                                {% endfor %}
+                                              </select> -->
+                                            <span class="tooltip ">Un nom ne peut pas faire moins de 2 caractères</span>
+                                            <button class="btn btn-lg " style="background-color:red; color:green " onclick=window.location.href='http://127.0.0.1:8000/service/departement' ; value=departement>
+                                                <i class="fa fa-plus "></i> 
+                                             </button>
+                                        </div>
+
+                                        <div class="form-group row ">
+                                            <label class="control-label col-md-3 col-sm-3 " for="first-name ">Materiel : <span class="required ">*</span>
+                                            </label>
+                                            <select class="form control " required id="name" name="materiel" value={{panne.materiel}}>
+                                                {% for materiel in materiels %}
+                                            <option > {{materiel}}</option>                         
+                                            {% endfor %}
+                                            </select>
+                                            <!-- <select id="id_departement" class=" control-label col-md-4 col-sm-4 row ">
+                                                {% for category in categories  %}
+                                                  <option value="{{ departement }} ">{{ departement.departement }}</option>
+                                                {% endfor %}
+                                              </select> -->
+                                            <span class="tooltip ">Un nom ne peut pas faire moins de 2 caractères</span>
+                                            <button class="btn btn-lg " style="background-color:red; color:green " onclick=window.location.href='http://127.0.0.1:8000/service/departement' ; value=departement>
+                                                <i class="fa fa-plus "></i> 
+                                             </button>
+                                        </div>
+                                        <div class="ln_solid"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-9 col-sm-9  offset-md-3">
+                                                <button type="button" class="btn btn-primary">Cancel</button>
+
+                                                <button type="submit" class="btn btn-success">Update</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}

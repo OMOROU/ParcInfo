@@ -1,0 +1,64 @@
+{% extends "base.html" %}{% load staticfiles %} {% block title %}
+<title>Liste des Type de panne</title>{% endblock title %}{% block content %}
+<div class="container">
+    <br />
+    <br />
+    <div class="col-md-12 col-sm-12  ">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>liste des types de panne</h2>
+                <div class="add-product">
+                    <a href="{% url 'intervention:type_panne' %}">Ajouter type_panne</a>
+                </div>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <h2> </h2>
+            <div class="x_content">
+                <div class="table-responsive">
+                    <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                            <tr class="headings">
+                                <th>
+                                    <input type="checkbox" id="check-all" class="flat">
+                                </th>
+                                <th class="column-title">#</th>
+                                <th class="column-title">Libelle type_panne : </th>
+                                <th class="column-title">Description type_panne :</th>
+                                <th class="column-title no-link last"><span class="nobr">Action</span>
+                                </th>
+
+                            </tr>
+                        </thead>
+                        {% for type_pannes in type_panne %}
+
+                        <tbody>
+                            <tr class="odd pointer">
+                                <td class="a-center ">
+                                    <input type="checkbox" class="flat" name="table_records">
+                                </td>
+                                <td class=" "></td>
+                                <td class=" ">{{type_pannes.libelle_pan}}</td>
+                                <td class=" ">{{type_pannes.description}}</td>
+                                <td class=" btn btn-primary waves-effect waves-light m-r-10">
+
+                                    <ul>
+                                        <a href="{% url 'intervention:onetypepan' type_pannes.id %}">Update|</a>
+                                        <a href="{% url 'intervention:onetypepandel' type_pannes.id %}">Delete</a>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

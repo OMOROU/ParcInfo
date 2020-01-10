@@ -1,0 +1,70 @@
+{% extends "base.html" %}{% load staticfiles %} {% block title %}
+<title>Bureau</title>{% endblock title %}{% block content %}
+<div class="container">
+
+
+    <div class="right_col" role="main">
+        <div class="">
+
+            <div class="clearfix"></div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 ">
+                    <div class="x_panel">
+
+                        <div class="x_content">
+                            <br />
+                            <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="POST" action="{%url 'service:deleteburo' bureau.id %}">
+                                {%csrf_token%}
+                                <div class="page-header ">
+                                    <h3>Enregistrement de Bureau</h3>
+                                </div>
+
+                                <div class="form-group row ">
+                                    <label class="control-label col-md-3 col-sm-3 " for="first-name ">Numero du Bureau: <span class="required ">*</span>
+                                    </label>
+                                    <div class="col-md-4 col-sm-4 ">
+                                        <input type="number" class="form-control" id="num_bureau" name="num_bureau" value="{{bureau.num_bureau}}" rows="1">
+                                    </div>
+                                    <span class="tooltip ">Un nom ne peut pas faire moins de 2 caractères</span>
+                                </div>
+
+                                <div class="form-group row ">
+                                    <label class="control-label col-md-3 col-sm-3 " for="first-name ">Departement : <span class="required ">*</span>
+                                    </label>
+                                    <select class="form control " required id="libelle_dep" name="departement" value="{{bureau.departement}}">
+                                        {% for departements in departement %}
+                                    <option > {{departements}}</option>                         
+                                    {% endfor %}
+                                    </select>
+                                    <!-- <select id="id_departement" class=" control-label col-md-4 col-sm-4 row ">
+                                        {% for category in categories  %}
+                                          <option value="{{ departement }} ">{{ departement.departement }}</option>
+                                        {% endfor %}
+                                      </select> -->
+                                    <span class="tooltip ">Un nom ne peut pas faire moins de 2 caractères</span>
+                                    <button class="btn btn-lg " style="background-color:red; color:green " onclick=window.location.href='http://127.0.0.1:8000/service/departement' ; value=departement>
+                                        <i class="fa fa-plus "></i> 
+                                     </button>
+                                </div>
+
+                                <div class="ln_solid "></div>
+                                <div class="item form-group ">
+                                    <div class="col-md-6 col-sm-6 offset-md-3 ">
+                                        <button class="btn btn-primary " type="button ">Cancel</button>
+
+
+                                        <button id="send " type="submit " name="send " class="btn btn-success ">Delete</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

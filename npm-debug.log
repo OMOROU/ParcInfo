@@ -1,0 +1,791 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'chart.js',
+1 verbose cli   '--save' ]
+2 info using npm@3.5.2
+3 info using node@v8.10.0
+4 verbose config Skipping project config: /home/arafat/.npmrc. (matches userconfig)
+5 silly loadCurrentTree Starting
+6 silly install loadCurrentTree
+7 silly install readLocalPackageData
+8 silly fetchPackageMetaData chart.js
+9 silly fetchNamedPackageData chart.js
+10 silly mapToRegistry name chart.js
+11 silly mapToRegistry using default registry
+12 silly mapToRegistry registry https://registry.npmjs.org/
+13 silly mapToRegistry uri https://registry.npmjs.org/chart.js
+14 verbose request uri https://registry.npmjs.org/chart.js
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 11:01:23
+17 verbose request id 577ea96f7c87283f
+18 http request GET https://registry.npmjs.org/chart.js
+19 http 200 https://registry.npmjs.org/chart.js
+20 verbose headers { date: 'Fri, 03 Jan 2020 11:01:24 GMT',
+20 verbose headers   'content-type': 'application/json',
+20 verbose headers   'transfer-encoding': 'chunked',
+20 verbose headers   connection: 'keep-alive',
+20 verbose headers   'set-cookie':
+20 verbose headers    [ '__cfduid=d42dbd83e15579ba1308de8cf3807e8a21578049284; expires=Sun, 02-Feb-20 11:01:24 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+20 verbose headers   'cf-ray': '54f4797e988eda8a-LIS',
+20 verbose headers   age: '1315',
+20 verbose headers   'cache-control': 'public, max-age=300',
+20 verbose headers   etag: 'W/"72fc9ba4f0b8fe74a2f949aad7803a9f"',
+20 verbose headers   'last-modified': 'Thu, 14 Nov 2019 18:42:58 GMT',
+20 verbose headers   vary: 'accept-encoding, accept',
+20 verbose headers   'cf-cache-status': 'HIT',
+20 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+20 verbose headers   server: 'cloudflare',
+20 verbose headers   'content-encoding': 'gzip' }
+21 silly get cb [ 200,
+21 silly get   { date: 'Fri, 03 Jan 2020 11:01:24 GMT',
+21 silly get     'content-type': 'application/json',
+21 silly get     'transfer-encoding': 'chunked',
+21 silly get     connection: 'keep-alive',
+21 silly get     'set-cookie':
+21 silly get      [ '__cfduid=d42dbd83e15579ba1308de8cf3807e8a21578049284; expires=Sun, 02-Feb-20 11:01:24 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+21 silly get     'cf-ray': '54f4797e988eda8a-LIS',
+21 silly get     age: '1315',
+21 silly get     'cache-control': 'public, max-age=300',
+21 silly get     etag: 'W/"72fc9ba4f0b8fe74a2f949aad7803a9f"',
+21 silly get     'last-modified': 'Thu, 14 Nov 2019 18:42:58 GMT',
+21 silly get     vary: 'accept-encoding, accept',
+21 silly get     'cf-cache-status': 'HIT',
+21 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+21 silly get     server: 'cloudflare',
+21 silly get     'content-encoding': 'gzip' } ]
+22 verbose get saving chart.js to /home/arafat/.npm/registry.npmjs.org/chart.js/.cache.json
+23 verbose makeDirectory /home/arafat/.npm creation not in flight; initializing
+24 silly makeDirectory /home/arafat/.npm uid: 1000 gid: 1000
+25 silly install normalizeTree
+26 silly loadCurrentTree Finishing
+27 silly loadIdealTree Starting
+28 silly install loadIdealTree
+29 silly cloneCurrentTree Starting
+30 silly install cloneCurrentTreeToIdealTree
+31 silly cloneCurrentTree Finishing
+32 silly loadShrinkwrap Starting
+33 silly install loadShrinkwrap
+34 silly loadShrinkwrap Finishing
+35 silly loadAllDepsIntoIdealTree Starting
+36 silly install loadAllDepsIntoIdealTree
+37 silly resolveWithNewModule chart.js@2.9.3 checking installable status
+38 silly cache add args [ 'chart.js', null ]
+39 verbose cache add spec chart.js
+40 silly cache add parsed spec Result {
+40 silly cache add   raw: 'chart.js',
+40 silly cache add   scope: null,
+40 silly cache add   name: 'chart.js',
+40 silly cache add   rawSpec: '',
+40 silly cache add   spec: 'latest',
+40 silly cache add   type: 'tag' }
+41 silly addNamed chart.js@latest
+42 verbose addNamed "latest" is being treated as a dist-tag for chart.js
+43 info addNameTag [ 'chart.js', 'latest' ]
+44 silly mapToRegistry name chart.js
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry uri https://registry.npmjs.org/chart.js
+48 verbose addNameTag registry:https://registry.npmjs.org/chart.js not in flight; fetching
+49 verbose get https://registry.npmjs.org/chart.js not expired, no request
+50 silly addNameTag next cb for chart.js with tag latest
+51 silly addNamed chart.js@2.9.3
+52 verbose addNamed "2.9.3" is a plain semver version for chart.js
+53 silly mapToRegistry name chart.js
+54 silly mapToRegistry using default registry
+55 silly mapToRegistry registry https://registry.npmjs.org/
+56 silly mapToRegistry uri https://registry.npmjs.org/chart.js
+57 verbose addRemoteTarball https://registry.npmjs.org/chart.js/-/chart.js-2.9.3.tgz not in flight; adding
+58 verbose addRemoteTarball [ 'https://registry.npmjs.org/chart.js/-/chart.js-2.9.3.tgz',
+58 verbose addRemoteTarball   'ae3884114dafd381bc600f5b35a189138aac1ef7' ]
+59 info retry fetch attempt 1 at 11:01:25
+60 info attempt registry request try #1 at 11:01:25
+61 http fetch GET https://registry.npmjs.org/chart.js/-/chart.js-2.9.3.tgz
+62 http fetch 200 https://registry.npmjs.org/chart.js/-/chart.js-2.9.3.tgz
+63 silly fetchAndShaCheck shasum ae3884114dafd381bc600f5b35a189138aac1ef7
+64 verbose addTmpTarball /tmp/npm-11834-98f3bf14/registry.npmjs.org/chart.js/-/chart.js-2.9.3.tgz not in flight; adding
+65 verbose addTmpTarball already have metadata; skipping unpack for chart.js@2.9.3
+66 silly cache afterAdd chart.js@2.9.3
+67 verbose afterAdd /home/arafat/.npm/chart.js/2.9.3/package/package.json not in flight; writing
+68 verbose afterAdd /home/arafat/.npm/chart.js/2.9.3/package/package.json written
+69 silly fetchNamedPackageData chartjs-color
+70 silly mapToRegistry name chartjs-color
+71 silly mapToRegistry using default registry
+72 silly mapToRegistry registry https://registry.npmjs.org/
+73 silly mapToRegistry uri https://registry.npmjs.org/chartjs-color
+74 silly fetchNamedPackageData moment
+75 silly mapToRegistry name moment
+76 silly mapToRegistry using default registry
+77 silly mapToRegistry registry https://registry.npmjs.org/
+78 silly mapToRegistry uri https://registry.npmjs.org/moment
+79 verbose request uri https://registry.npmjs.org/chartjs-color
+80 verbose request no auth needed
+81 info attempt registry request try #1 at 11:01:25
+82 http request GET https://registry.npmjs.org/chartjs-color
+83 verbose request uri https://registry.npmjs.org/moment
+84 verbose request no auth needed
+85 info attempt registry request try #1 at 11:01:25
+86 http request GET https://registry.npmjs.org/moment
+87 http 200 https://registry.npmjs.org/chartjs-color
+88 verbose headers { date: 'Fri, 03 Jan 2020 11:01:25 GMT',
+88 verbose headers   'content-type': 'application/json',
+88 verbose headers   'transfer-encoding': 'chunked',
+88 verbose headers   connection: 'keep-alive',
+88 verbose headers   'set-cookie':
+88 verbose headers    [ '__cfduid=dfbda915528fa5a688f7a26dcdf756d7e1578049285; expires=Sun, 02-Feb-20 11:01:25 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+88 verbose headers   'cf-ray': '54f47984996bda8a-LIS',
+88 verbose headers   'cache-control': 'public, max-age=300',
+88 verbose headers   etag: 'W/"0d892a053b39dd48e97353e5565f68f0"',
+88 verbose headers   'last-modified': 'Fri, 25 Oct 2019 20:51:25 GMT',
+88 verbose headers   vary: 'accept-encoding, accept',
+88 verbose headers   'cf-cache-status': 'HIT',
+88 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+88 verbose headers   server: 'cloudflare',
+88 verbose headers   'content-encoding': 'gzip' }
+89 silly get cb [ 200,
+89 silly get   { date: 'Fri, 03 Jan 2020 11:01:25 GMT',
+89 silly get     'content-type': 'application/json',
+89 silly get     'transfer-encoding': 'chunked',
+89 silly get     connection: 'keep-alive',
+89 silly get     'set-cookie':
+89 silly get      [ '__cfduid=dfbda915528fa5a688f7a26dcdf756d7e1578049285; expires=Sun, 02-Feb-20 11:01:25 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+89 silly get     'cf-ray': '54f47984996bda8a-LIS',
+89 silly get     'cache-control': 'public, max-age=300',
+89 silly get     etag: 'W/"0d892a053b39dd48e97353e5565f68f0"',
+89 silly get     'last-modified': 'Fri, 25 Oct 2019 20:51:25 GMT',
+89 silly get     vary: 'accept-encoding, accept',
+89 silly get     'cf-cache-status': 'HIT',
+89 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+89 silly get     server: 'cloudflare',
+89 silly get     'content-encoding': 'gzip' } ]
+90 verbose get saving chartjs-color to /home/arafat/.npm/registry.npmjs.org/chartjs-color/.cache.json
+91 silly resolveWithNewModule chartjs-color@2.4.1 checking installable status
+92 silly cache add args [ 'chartjs-color@^2.1.0', null ]
+93 verbose cache add spec chartjs-color@^2.1.0
+94 silly cache add parsed spec Result {
+94 silly cache add   raw: 'chartjs-color@^2.1.0',
+94 silly cache add   scope: null,
+94 silly cache add   name: 'chartjs-color',
+94 silly cache add   rawSpec: '^2.1.0',
+94 silly cache add   spec: '>=2.1.0 <3.0.0',
+94 silly cache add   type: 'range' }
+95 silly addNamed chartjs-color@>=2.1.0 <3.0.0
+96 verbose addNamed ">=2.1.0 <3.0.0" is a valid semver range for chartjs-color
+97 silly addNameRange { name: 'chartjs-color',
+97 silly addNameRange   range: '>=2.1.0 <3.0.0',
+97 silly addNameRange   hasData: false }
+98 silly mapToRegistry name chartjs-color
+99 silly mapToRegistry using default registry
+100 silly mapToRegistry registry https://registry.npmjs.org/
+101 silly mapToRegistry uri https://registry.npmjs.org/chartjs-color
+102 verbose addNameRange registry:https://registry.npmjs.org/chartjs-color not in flight; fetching
+103 verbose get https://registry.npmjs.org/chartjs-color not expired, no request
+104 silly addNameRange number 2 { name: 'chartjs-color', range: '>=2.1.0 <3.0.0', hasData: true }
+105 silly addNameRange versions [ 'chartjs-color',
+105 silly addNameRange   [ '0.8.2',
+105 silly addNameRange     '1.0.2',
+105 silly addNameRange     '1.0.21',
+105 silly addNameRange     '1.0.22',
+105 silly addNameRange     '2.0.0',
+105 silly addNameRange     '2.1.0',
+105 silly addNameRange     '2.2.0',
+105 silly addNameRange     '2.3.0',
+105 silly addNameRange     '2.4.1' ] ]
+106 silly addNamed chartjs-color@2.4.1
+107 verbose addNamed "2.4.1" is a plain semver version for chartjs-color
+108 silly mapToRegistry name chartjs-color
+109 silly mapToRegistry using default registry
+110 silly mapToRegistry registry https://registry.npmjs.org/
+111 silly mapToRegistry uri https://registry.npmjs.org/chartjs-color
+112 verbose addRemoteTarball https://registry.npmjs.org/chartjs-color/-/chartjs-color-2.4.1.tgz not in flight; adding
+113 verbose addRemoteTarball [ 'https://registry.npmjs.org/chartjs-color/-/chartjs-color-2.4.1.tgz',
+113 verbose addRemoteTarball   '6118bba202fe1ea79dd7f7c0f9da93467296c3b0' ]
+114 info retry fetch attempt 1 at 11:01:26
+115 info attempt registry request try #1 at 11:01:26
+116 http fetch GET https://registry.npmjs.org/chartjs-color/-/chartjs-color-2.4.1.tgz
+117 http 200 https://registry.npmjs.org/moment
+118 verbose headers { date: 'Fri, 03 Jan 2020 11:01:26 GMT',
+118 verbose headers   'content-type': 'application/json',
+118 verbose headers   'transfer-encoding': 'chunked',
+118 verbose headers   connection: 'keep-alive',
+118 verbose headers   'set-cookie':
+118 verbose headers    [ '__cfduid=d249110386f92dca6303fdb79364cc4951578049286; expires=Sun, 02-Feb-20 11:01:26 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+118 verbose headers   'cf-ray': '54f47985bcaa6246-LIS',
+118 verbose headers   age: '2719',
+118 verbose headers   'cache-control': 'public, max-age=300',
+118 verbose headers   etag: 'W/"f54c2d0204f616e1c56f6fada0377f64"',
+118 verbose headers   'last-modified': 'Tue, 03 Dec 2019 18:37:56 GMT',
+118 verbose headers   vary: 'accept-encoding, accept',
+118 verbose headers   'cf-cache-status': 'HIT',
+118 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+118 verbose headers   server: 'cloudflare',
+118 verbose headers   'content-encoding': 'gzip' }
+119 silly get cb [ 200,
+119 silly get   { date: 'Fri, 03 Jan 2020 11:01:26 GMT',
+119 silly get     'content-type': 'application/json',
+119 silly get     'transfer-encoding': 'chunked',
+119 silly get     connection: 'keep-alive',
+119 silly get     'set-cookie':
+119 silly get      [ '__cfduid=d249110386f92dca6303fdb79364cc4951578049286; expires=Sun, 02-Feb-20 11:01:26 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+119 silly get     'cf-ray': '54f47985bcaa6246-LIS',
+119 silly get     age: '2719',
+119 silly get     'cache-control': 'public, max-age=300',
+119 silly get     etag: 'W/"f54c2d0204f616e1c56f6fada0377f64"',
+119 silly get     'last-modified': 'Tue, 03 Dec 2019 18:37:56 GMT',
+119 silly get     vary: 'accept-encoding, accept',
+119 silly get     'cf-cache-status': 'HIT',
+119 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+119 silly get     server: 'cloudflare',
+119 silly get     'content-encoding': 'gzip' } ]
+120 verbose get saving moment to /home/arafat/.npm/registry.npmjs.org/moment/.cache.json
+121 http fetch 200 https://registry.npmjs.org/chartjs-color/-/chartjs-color-2.4.1.tgz
+122 silly fetchAndShaCheck shasum 6118bba202fe1ea79dd7f7c0f9da93467296c3b0
+123 verbose addTmpTarball /tmp/npm-11834-98f3bf14/registry.npmjs.org/chartjs-color/-/chartjs-color-2.4.1.tgz not in flight; adding
+124 verbose addTmpTarball already have metadata; skipping unpack for chartjs-color@2.4.1
+125 silly resolveWithNewModule moment@2.24.0 checking installable status
+126 silly cache add args [ 'moment@^2.10.2', null ]
+127 verbose cache add spec moment@^2.10.2
+128 silly cache add parsed spec Result {
+128 silly cache add   raw: 'moment@^2.10.2',
+128 silly cache add   scope: null,
+128 silly cache add   name: 'moment',
+128 silly cache add   rawSpec: '^2.10.2',
+128 silly cache add   spec: '>=2.10.2 <3.0.0',
+128 silly cache add   type: 'range' }
+129 silly addNamed moment@>=2.10.2 <3.0.0
+130 verbose addNamed ">=2.10.2 <3.0.0" is a valid semver range for moment
+131 silly addNameRange { name: 'moment', range: '>=2.10.2 <3.0.0', hasData: false }
+132 silly mapToRegistry name moment
+133 silly mapToRegistry using default registry
+134 silly mapToRegistry registry https://registry.npmjs.org/
+135 silly mapToRegistry uri https://registry.npmjs.org/moment
+136 verbose addNameRange registry:https://registry.npmjs.org/moment not in flight; fetching
+137 verbose get https://registry.npmjs.org/moment not expired, no request
+138 silly addNameRange number 2 { name: 'moment', range: '>=2.10.2 <3.0.0', hasData: true }
+139 silly addNameRange versions [ 'moment',
+139 silly addNameRange   [ '1.0.0',
+139 silly addNameRange     '1.0.1',
+139 silly addNameRange     '1.1.0',
+139 silly addNameRange     '1.1.1',
+139 silly addNameRange     '1.2.0',
+139 silly addNameRange     '1.3.0',
+139 silly addNameRange     '1.4.0',
+139 silly addNameRange     '1.5.0',
+139 silly addNameRange     '1.5.1',
+139 silly addNameRange     '1.6.0',
+139 silly addNameRange     '1.6.1',
+139 silly addNameRange     '1.6.2',
+139 silly addNameRange     '1.7.0',
+139 silly addNameRange     '1.7.1',
+139 silly addNameRange     '1.7.2',
+139 silly addNameRange     '2.0.0',
+139 silly addNameRange     '2.1.0',
+139 silly addNameRange     '2.2.1',
+139 silly addNameRange     '2.3.0',
+139 silly addNameRange     '2.3.1',
+139 silly addNameRange     '2.4.0',
+139 silly addNameRange     '2.5.0',
+139 silly addNameRange     '2.5.1',
+139 silly addNameRange     '2.6.0',
+139 silly addNameRange     '2.7.0',
+139 silly addNameRange     '2.8.1',
+139 silly addNameRange     '2.8.2',
+139 silly addNameRange     '2.8.3',
+139 silly addNameRange     '2.8.4',
+139 silly addNameRange     '2.9.0',
+139 silly addNameRange     '2.10.2',
+139 silly addNameRange     '2.10.3',
+139 silly addNameRange     '2.10.5',
+139 silly addNameRange     '2.10.6',
+139 silly addNameRange     '2.11.0',
+139 silly addNameRange     '2.11.1',
+139 silly addNameRange     '2.11.2',
+139 silly addNameRange     '2.12.0',
+139 silly addNameRange     '2.13.0',
+139 silly addNameRange     '2.14.0',
+139 silly addNameRange     '2.14.1',
+139 silly addNameRange     '2.15.0',
+139 silly addNameRange     '2.15.1',
+139 silly addNameRange     '2.15.2',
+139 silly addNameRange     '2.16.0',
+139 silly addNameRange     '2.17.0',
+139 silly addNameRange     '2.17.1',
+139 silly addNameRange     '2.18.0',
+139 silly addNameRange     '2.18.1',
+139 silly addNameRange     '2.19.0',
+139 silly addNameRange     '2.19.1',
+139 silly addNameRange     '2.19.2',
+139 silly addNameRange     '2.19.3',
+139 silly addNameRange     '2.19.4',
+139 silly addNameRange     '2.20.0',
+139 silly addNameRange     '2.20.1',
+139 silly addNameRange     '2.21.0',
+139 silly addNameRange     '2.22.0',
+139 silly addNameRange     '2.22.1',
+139 silly addNameRange     '2.22.2',
+139 silly addNameRange     '2.23.0',
+139 silly addNameRange     '2.24.0' ] ]
+140 silly addNamed moment@2.24.0
+141 verbose addNamed "2.24.0" is a plain semver version for moment
+142 silly mapToRegistry name moment
+143 silly mapToRegistry using default registry
+144 silly mapToRegistry registry https://registry.npmjs.org/
+145 silly mapToRegistry uri https://registry.npmjs.org/moment
+146 verbose addRemoteTarball https://registry.npmjs.org/moment/-/moment-2.24.0.tgz not in flight; adding
+147 verbose addRemoteTarball [ 'https://registry.npmjs.org/moment/-/moment-2.24.0.tgz',
+147 verbose addRemoteTarball   '0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b' ]
+148 info retry fetch attempt 1 at 11:01:26
+149 info attempt registry request try #1 at 11:01:26
+150 http fetch GET https://registry.npmjs.org/moment/-/moment-2.24.0.tgz
+151 silly cache afterAdd chartjs-color@2.4.1
+152 verbose afterAdd /home/arafat/.npm/chartjs-color/2.4.1/package/package.json not in flight; writing
+153 verbose afterAdd /home/arafat/.npm/chartjs-color/2.4.1/package/package.json written
+154 http fetch 200 https://registry.npmjs.org/moment/-/moment-2.24.0.tgz
+155 silly fetchAndShaCheck shasum 0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b
+156 verbose addTmpTarball /tmp/npm-11834-98f3bf14/registry.npmjs.org/moment/-/moment-2.24.0.tgz not in flight; adding
+157 verbose addTmpTarball already have metadata; skipping unpack for moment@2.24.0
+158 silly cache afterAdd moment@2.24.0
+159 verbose afterAdd /home/arafat/.npm/moment/2.24.0/package/package.json not in flight; writing
+160 verbose afterAdd /home/arafat/.npm/moment/2.24.0/package/package.json written
+161 silly fetchNamedPackageData color-convert
+162 silly mapToRegistry name color-convert
+163 silly mapToRegistry using default registry
+164 silly mapToRegistry registry https://registry.npmjs.org/
+165 silly mapToRegistry uri https://registry.npmjs.org/color-convert
+166 silly fetchNamedPackageData chartjs-color-string
+167 silly mapToRegistry name chartjs-color-string
+168 silly mapToRegistry using default registry
+169 silly mapToRegistry registry https://registry.npmjs.org/
+170 silly mapToRegistry uri https://registry.npmjs.org/chartjs-color-string
+171 verbose request uri https://registry.npmjs.org/color-convert
+172 verbose request no auth needed
+173 info attempt registry request try #1 at 11:01:26
+174 http request GET https://registry.npmjs.org/color-convert
+175 verbose request uri https://registry.npmjs.org/chartjs-color-string
+176 verbose request no auth needed
+177 info attempt registry request try #1 at 11:01:26
+178 http request GET https://registry.npmjs.org/chartjs-color-string
+179 http 200 https://registry.npmjs.org/color-convert
+180 verbose headers { date: 'Fri, 03 Jan 2020 11:01:26 GMT',
+180 verbose headers   'content-type': 'application/json',
+180 verbose headers   'transfer-encoding': 'chunked',
+180 verbose headers   connection: 'keep-alive',
+180 verbose headers   'set-cookie':
+180 verbose headers    [ '__cfduid=d6e5a367cbd8878a90ad2a40fd83f42ca1578049286; expires=Sun, 02-Feb-20 11:01:26 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+180 verbose headers   'cf-ray': '54f4798b3c8fda8a-LIS',
+180 verbose headers   age: '1508',
+180 verbose headers   'cache-control': 'public, max-age=300',
+180 verbose headers   etag: 'W/"eed99a9b1a63a15637834ca5633016bb"',
+180 verbose headers   'last-modified': 'Mon, 19 Aug 2019 21:05:41 GMT',
+180 verbose headers   vary: 'accept-encoding, accept',
+180 verbose headers   'cf-cache-status': 'HIT',
+180 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+180 verbose headers   server: 'cloudflare',
+180 verbose headers   'content-encoding': 'gzip' }
+181 silly get cb [ 200,
+181 silly get   { date: 'Fri, 03 Jan 2020 11:01:26 GMT',
+181 silly get     'content-type': 'application/json',
+181 silly get     'transfer-encoding': 'chunked',
+181 silly get     connection: 'keep-alive',
+181 silly get     'set-cookie':
+181 silly get      [ '__cfduid=d6e5a367cbd8878a90ad2a40fd83f42ca1578049286; expires=Sun, 02-Feb-20 11:01:26 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+181 silly get     'cf-ray': '54f4798b3c8fda8a-LIS',
+181 silly get     age: '1508',
+181 silly get     'cache-control': 'public, max-age=300',
+181 silly get     etag: 'W/"eed99a9b1a63a15637834ca5633016bb"',
+181 silly get     'last-modified': 'Mon, 19 Aug 2019 21:05:41 GMT',
+181 silly get     vary: 'accept-encoding, accept',
+181 silly get     'cf-cache-status': 'HIT',
+181 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+181 silly get     server: 'cloudflare',
+181 silly get     'content-encoding': 'gzip' } ]
+182 verbose get saving color-convert to /home/arafat/.npm/registry.npmjs.org/color-convert/.cache.json
+183 silly resolveWithNewModule color-convert@1.9.3 checking installable status
+184 silly cache add args [ 'color-convert@^1.9.3', null ]
+185 verbose cache add spec color-convert@^1.9.3
+186 silly cache add parsed spec Result {
+186 silly cache add   raw: 'color-convert@^1.9.3',
+186 silly cache add   scope: null,
+186 silly cache add   name: 'color-convert',
+186 silly cache add   rawSpec: '^1.9.3',
+186 silly cache add   spec: '>=1.9.3 <2.0.0',
+186 silly cache add   type: 'range' }
+187 silly addNamed color-convert@>=1.9.3 <2.0.0
+188 verbose addNamed ">=1.9.3 <2.0.0" is a valid semver range for color-convert
+189 silly addNameRange { name: 'color-convert',
+189 silly addNameRange   range: '>=1.9.3 <2.0.0',
+189 silly addNameRange   hasData: false }
+190 silly mapToRegistry name color-convert
+191 silly mapToRegistry using default registry
+192 silly mapToRegistry registry https://registry.npmjs.org/
+193 silly mapToRegistry uri https://registry.npmjs.org/color-convert
+194 verbose addNameRange registry:https://registry.npmjs.org/color-convert not in flight; fetching
+195 http 200 https://registry.npmjs.org/chartjs-color-string
+196 verbose headers { date: 'Fri, 03 Jan 2020 11:01:26 GMT',
+196 verbose headers   'content-type': 'application/json',
+196 verbose headers   'transfer-encoding': 'chunked',
+196 verbose headers   connection: 'keep-alive',
+196 verbose headers   'set-cookie':
+196 verbose headers    [ '__cfduid=d249110386f92dca6303fdb79364cc4951578049286; expires=Sun, 02-Feb-20 11:01:26 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+196 verbose headers   'cf-ray': '54f4798b3fb96246-LIS',
+196 verbose headers   'cache-control': 'public, max-age=300',
+196 verbose headers   etag: 'W/"013d2d7163110fa6de6769ed6abd9893"',
+196 verbose headers   'last-modified': 'Thu, 07 Mar 2019 10:05:19 GMT',
+196 verbose headers   vary: 'accept-encoding, accept',
+196 verbose headers   'cf-cache-status': 'HIT',
+196 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+196 verbose headers   server: 'cloudflare',
+196 verbose headers   'content-encoding': 'gzip' }
+197 silly get cb [ 200,
+197 silly get   { date: 'Fri, 03 Jan 2020 11:01:26 GMT',
+197 silly get     'content-type': 'application/json',
+197 silly get     'transfer-encoding': 'chunked',
+197 silly get     connection: 'keep-alive',
+197 silly get     'set-cookie':
+197 silly get      [ '__cfduid=d249110386f92dca6303fdb79364cc4951578049286; expires=Sun, 02-Feb-20 11:01:26 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+197 silly get     'cf-ray': '54f4798b3fb96246-LIS',
+197 silly get     'cache-control': 'public, max-age=300',
+197 silly get     etag: 'W/"013d2d7163110fa6de6769ed6abd9893"',
+197 silly get     'last-modified': 'Thu, 07 Mar 2019 10:05:19 GMT',
+197 silly get     vary: 'accept-encoding, accept',
+197 silly get     'cf-cache-status': 'HIT',
+197 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+197 silly get     server: 'cloudflare',
+197 silly get     'content-encoding': 'gzip' } ]
+198 verbose get saving chartjs-color-string to /home/arafat/.npm/registry.npmjs.org/chartjs-color-string/.cache.json
+199 verbose get https://registry.npmjs.org/color-convert not expired, no request
+200 silly addNameRange number 2 { name: 'color-convert', range: '>=1.9.3 <2.0.0', hasData: true }
+201 silly addNameRange versions [ 'color-convert',
+201 silly addNameRange   [ '0.1.0',
+201 silly addNameRange     '0.2.0',
+201 silly addNameRange     '0.2.1',
+201 silly addNameRange     '0.3.0',
+201 silly addNameRange     '0.3.1',
+201 silly addNameRange     '0.3.4',
+201 silly addNameRange     '0.4.0',
+201 silly addNameRange     '0.5.0',
+201 silly addNameRange     '0.5.1',
+201 silly addNameRange     '0.5.2',
+201 silly addNameRange     '0.5.3',
+201 silly addNameRange     '0.6.0',
+201 silly addNameRange     '0.7.0',
+201 silly addNameRange     '1.0.0',
+201 silly addNameRange     '1.1.0',
+201 silly addNameRange     '1.1.1',
+201 silly addNameRange     '1.1.2',
+201 silly addNameRange     '1.2.0',
+201 silly addNameRange     '1.2.1',
+201 silly addNameRange     '1.2.2',
+201 silly addNameRange     '1.3.0',
+201 silly addNameRange     '1.3.1',
+201 silly addNameRange     '1.4.0',
+201 silly addNameRange     '1.5.0',
+201 silly addNameRange     '1.6.0',
+201 silly addNameRange     '1.7.0',
+201 silly addNameRange     '1.8.0',
+201 silly addNameRange     '1.8.1',
+201 silly addNameRange     '1.8.2',
+201 silly addNameRange     '1.9.0',
+201 silly addNameRange     '1.9.1',
+201 silly addNameRange     '1.9.2',
+201 silly addNameRange     '1.9.3',
+201 silly addNameRange     '2.0.0',
+201 silly addNameRange     '2.0.1' ] ]
+202 silly addNamed color-convert@1.9.3
+203 verbose addNamed "1.9.3" is a plain semver version for color-convert
+204 silly mapToRegistry name color-convert
+205 silly mapToRegistry using default registry
+206 silly mapToRegistry registry https://registry.npmjs.org/
+207 silly mapToRegistry uri https://registry.npmjs.org/color-convert
+208 verbose addRemoteTarball https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz not in flight; adding
+209 verbose addRemoteTarball [ 'https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz',
+209 verbose addRemoteTarball   'bb71850690e1f136567de629d2d5471deda4c1e8' ]
+210 info retry fetch attempt 1 at 11:01:27
+211 info attempt registry request try #1 at 11:01:27
+212 http fetch GET https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz
+213 silly resolveWithNewModule chartjs-color-string@0.6.0 checking installable status
+214 silly cache add args [ 'chartjs-color-string@^0.6.0', null ]
+215 verbose cache add spec chartjs-color-string@^0.6.0
+216 silly cache add parsed spec Result {
+216 silly cache add   raw: 'chartjs-color-string@^0.6.0',
+216 silly cache add   scope: null,
+216 silly cache add   name: 'chartjs-color-string',
+216 silly cache add   rawSpec: '^0.6.0',
+216 silly cache add   spec: '>=0.6.0 <0.7.0',
+216 silly cache add   type: 'range' }
+217 silly addNamed chartjs-color-string@>=0.6.0 <0.7.0
+218 verbose addNamed ">=0.6.0 <0.7.0" is a valid semver range for chartjs-color-string
+219 silly addNameRange { name: 'chartjs-color-string',
+219 silly addNameRange   range: '>=0.6.0 <0.7.0',
+219 silly addNameRange   hasData: false }
+220 silly mapToRegistry name chartjs-color-string
+221 silly mapToRegistry using default registry
+222 silly mapToRegistry registry https://registry.npmjs.org/
+223 silly mapToRegistry uri https://registry.npmjs.org/chartjs-color-string
+224 verbose addNameRange registry:https://registry.npmjs.org/chartjs-color-string not in flight; fetching
+225 verbose get https://registry.npmjs.org/chartjs-color-string not expired, no request
+226 silly addNameRange number 2 { name: 'chartjs-color-string',
+226 silly addNameRange   range: '>=0.6.0 <0.7.0',
+226 silly addNameRange   hasData: true }
+227 silly addNameRange versions [ 'chartjs-color-string', [ '0.4.0', '0.5.0', '0.6.0' ] ]
+228 silly addNamed chartjs-color-string@0.6.0
+229 verbose addNamed "0.6.0" is a plain semver version for chartjs-color-string
+230 silly mapToRegistry name chartjs-color-string
+231 silly mapToRegistry using default registry
+232 silly mapToRegistry registry https://registry.npmjs.org/
+233 silly mapToRegistry uri https://registry.npmjs.org/chartjs-color-string
+234 verbose addRemoteTarball https://registry.npmjs.org/chartjs-color-string/-/chartjs-color-string-0.6.0.tgz not in flight; adding
+235 verbose addRemoteTarball [ 'https://registry.npmjs.org/chartjs-color-string/-/chartjs-color-string-0.6.0.tgz',
+235 verbose addRemoteTarball   '1df096621c0e70720a64f4135ea171d051402f71' ]
+236 info retry fetch attempt 1 at 11:01:27
+237 info attempt registry request try #1 at 11:01:27
+238 http fetch GET https://registry.npmjs.org/chartjs-color-string/-/chartjs-color-string-0.6.0.tgz
+239 http fetch 200 https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz
+240 silly fetchAndShaCheck shasum bb71850690e1f136567de629d2d5471deda4c1e8
+241 verbose addTmpTarball /tmp/npm-11834-98f3bf14/registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz not in flight; adding
+242 verbose addTmpTarball already have metadata; skipping unpack for color-convert@1.9.3
+243 silly cache afterAdd color-convert@1.9.3
+244 verbose afterAdd /home/arafat/.npm/color-convert/1.9.3/package/package.json not in flight; writing
+245 verbose afterAdd /home/arafat/.npm/color-convert/1.9.3/package/package.json written
+246 http fetch 200 https://registry.npmjs.org/chartjs-color-string/-/chartjs-color-string-0.6.0.tgz
+247 silly fetchAndShaCheck shasum 1df096621c0e70720a64f4135ea171d051402f71
+248 verbose addTmpTarball /tmp/npm-11834-98f3bf14/registry.npmjs.org/chartjs-color-string/-/chartjs-color-string-0.6.0.tgz not in flight; adding
+249 verbose addTmpTarball already have metadata; skipping unpack for chartjs-color-string@0.6.0
+250 silly cache afterAdd chartjs-color-string@0.6.0
+251 verbose afterAdd /home/arafat/.npm/chartjs-color-string/0.6.0/package/package.json not in flight; writing
+252 verbose afterAdd /home/arafat/.npm/chartjs-color-string/0.6.0/package/package.json written
+253 silly fetchNamedPackageData color-name
+254 silly mapToRegistry name color-name
+255 silly mapToRegistry using default registry
+256 silly mapToRegistry registry https://registry.npmjs.org/
+257 silly mapToRegistry uri https://registry.npmjs.org/color-name
+258 verbose request uri https://registry.npmjs.org/color-name
+259 verbose request no auth needed
+260 info attempt registry request try #1 at 11:01:27
+261 http request GET https://registry.npmjs.org/color-name
+262 http 200 https://registry.npmjs.org/color-name
+263 verbose headers { date: 'Fri, 03 Jan 2020 11:01:27 GMT',
+263 verbose headers   'content-type': 'application/json',
+263 verbose headers   'transfer-encoding': 'chunked',
+263 verbose headers   connection: 'keep-alive',
+263 verbose headers   'set-cookie':
+263 verbose headers    [ '__cfduid=dd6fa804ba87b37330b1b1bb232e71a5d1578049287; expires=Sun, 02-Feb-20 11:01:27 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+263 verbose headers   'cf-ray': '54f4798d09dcda8a-LIS',
+263 verbose headers   age: '1509',
+263 verbose headers   'cache-control': 'public, max-age=300',
+263 verbose headers   etag: 'W/"68499672f8aca14e62dccba8bf3b8402"',
+263 verbose headers   'last-modified': 'Tue, 01 Jan 2019 14:42:53 GMT',
+263 verbose headers   vary: 'accept-encoding, accept',
+263 verbose headers   'cf-cache-status': 'HIT',
+263 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+263 verbose headers   server: 'cloudflare',
+263 verbose headers   'content-encoding': 'gzip' }
+264 silly get cb [ 200,
+264 silly get   { date: 'Fri, 03 Jan 2020 11:01:27 GMT',
+264 silly get     'content-type': 'application/json',
+264 silly get     'transfer-encoding': 'chunked',
+264 silly get     connection: 'keep-alive',
+264 silly get     'set-cookie':
+264 silly get      [ '__cfduid=dd6fa804ba87b37330b1b1bb232e71a5d1578049287; expires=Sun, 02-Feb-20 11:01:27 GMT; path=/; domain=.npmjs.org; HttpOnly; SameSite=Lax' ],
+264 silly get     'cf-ray': '54f4798d09dcda8a-LIS',
+264 silly get     age: '1509',
+264 silly get     'cache-control': 'public, max-age=300',
+264 silly get     etag: 'W/"68499672f8aca14e62dccba8bf3b8402"',
+264 silly get     'last-modified': 'Tue, 01 Jan 2019 14:42:53 GMT',
+264 silly get     vary: 'accept-encoding, accept',
+264 silly get     'cf-cache-status': 'HIT',
+264 silly get     'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+264 silly get     server: 'cloudflare',
+264 silly get     'content-encoding': 'gzip' } ]
+265 verbose get saving color-name to /home/arafat/.npm/registry.npmjs.org/color-name/.cache.json
+266 silly resolveWithNewModule color-name@1.1.4 checking installable status
+267 silly cache add args [ 'color-name@^1.0.0', null ]
+268 verbose cache add spec color-name@^1.0.0
+269 silly cache add parsed spec Result {
+269 silly cache add   raw: 'color-name@^1.0.0',
+269 silly cache add   scope: null,
+269 silly cache add   name: 'color-name',
+269 silly cache add   rawSpec: '^1.0.0',
+269 silly cache add   spec: '>=1.0.0 <2.0.0',
+269 silly cache add   type: 'range' }
+270 silly addNamed color-name@>=1.0.0 <2.0.0
+271 verbose addNamed ">=1.0.0 <2.0.0" is a valid semver range for color-name
+272 silly addNameRange { name: 'color-name', range: '>=1.0.0 <2.0.0', hasData: false }
+273 silly mapToRegistry name color-name
+274 silly mapToRegistry using default registry
+275 silly mapToRegistry registry https://registry.npmjs.org/
+276 silly mapToRegistry uri https://registry.npmjs.org/color-name
+277 verbose addNameRange registry:https://registry.npmjs.org/color-name not in flight; fetching
+278 verbose get https://registry.npmjs.org/color-name not expired, no request
+279 silly addNameRange number 2 { name: 'color-name', range: '>=1.0.0 <2.0.0', hasData: true }
+280 silly addNameRange versions [ 'color-name',
+280 silly addNameRange   [ '0.0.1',
+280 silly addNameRange     '0.0.2',
+280 silly addNameRange     '1.0.0',
+280 silly addNameRange     '1.0.1',
+280 silly addNameRange     '1.1.0',
+280 silly addNameRange     '1.1.1',
+280 silly addNameRange     '1.1.2',
+280 silly addNameRange     '1.1.3',
+280 silly addNameRange     '1.1.4' ] ]
+281 silly addNamed color-name@1.1.4
+282 verbose addNamed "1.1.4" is a plain semver version for color-name
+283 silly mapToRegistry name color-name
+284 silly mapToRegistry using default registry
+285 silly mapToRegistry registry https://registry.npmjs.org/
+286 silly mapToRegistry uri https://registry.npmjs.org/color-name
+287 verbose addRemoteTarball https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz not in flight; adding
+288 verbose addRemoteTarball [ 'https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz',
+288 verbose addRemoteTarball   'c2a09a87acbde69543de6f63fa3995c826c536a2' ]
+289 info retry fetch attempt 1 at 11:01:27
+290 info attempt registry request try #1 at 11:01:27
+291 http fetch GET https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz
+292 http fetch 200 https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz
+293 silly fetchAndShaCheck shasum c2a09a87acbde69543de6f63fa3995c826c536a2
+294 verbose addTmpTarball /tmp/npm-11834-98f3bf14/registry.npmjs.org/color-name/-/color-name-1.1.4.tgz not in flight; adding
+295 verbose addTmpTarball already have metadata; skipping unpack for color-name@1.1.4
+296 silly cache afterAdd color-name@1.1.4
+297 verbose afterAdd /home/arafat/.npm/color-name/1.1.4/package/package.json not in flight; writing
+298 verbose afterAdd /home/arafat/.npm/color-name/1.1.4/package/package.json written
+299 silly fetchNamedPackageData color-name
+300 silly mapToRegistry name color-name
+301 silly mapToRegistry using default registry
+302 silly mapToRegistry registry https://registry.npmjs.org/
+303 silly mapToRegistry uri https://registry.npmjs.org/color-name
+304 silly resolveWithNewModule color-name@1.1.3 checking installable status
+305 silly cache add args [ 'color-name@1.1.3', null ]
+306 verbose cache add spec color-name@1.1.3
+307 silly cache add parsed spec Result {
+307 silly cache add   raw: 'color-name@1.1.3',
+307 silly cache add   scope: null,
+307 silly cache add   name: 'color-name',
+307 silly cache add   rawSpec: '1.1.3',
+307 silly cache add   spec: '1.1.3',
+307 silly cache add   type: 'version' }
+308 silly addNamed color-name@1.1.3
+309 verbose addNamed "1.1.3" is a plain semver version for color-name
+310 silly mapToRegistry name color-name
+311 silly mapToRegistry using default registry
+312 silly mapToRegistry registry https://registry.npmjs.org/
+313 silly mapToRegistry uri https://registry.npmjs.org/color-name
+314 verbose addNameVersion registry:https://registry.npmjs.org/color-name not in flight; fetching
+315 verbose get https://registry.npmjs.org/color-name not expired, no request
+316 silly mapToRegistry name color-name
+317 silly mapToRegistry using default registry
+318 silly mapToRegistry registry https://registry.npmjs.org/
+319 silly mapToRegistry uri https://registry.npmjs.org/color-name
+320 verbose addRemoteTarball https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz not in flight; adding
+321 verbose addRemoteTarball [ 'https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz',
+321 verbose addRemoteTarball   'a7d0558bd89c42f795dd42328f740831ca53bc25' ]
+322 info retry fetch attempt 1 at 11:01:27
+323 info attempt registry request try #1 at 11:01:27
+324 http fetch GET https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz
+325 http fetch 200 https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz
+326 silly fetchAndShaCheck shasum a7d0558bd89c42f795dd42328f740831ca53bc25
+327 verbose addTmpTarball /tmp/npm-11834-98f3bf14/registry.npmjs.org/color-name/-/color-name-1.1.3.tgz not in flight; adding
+328 verbose addTmpTarball already have metadata; skipping unpack for color-name@1.1.3
+329 silly cache afterAdd color-name@1.1.3
+330 verbose afterAdd /home/arafat/.npm/color-name/1.1.3/package/package.json not in flight; writing
+331 verbose afterAdd /home/arafat/.npm/color-name/1.1.3/package/package.json written
+332 silly loadAllDepsIntoIdealTree Finishing
+333 silly idealTree:prePrune arafat
+333 silly idealTree:prePrune ├── @babel/runtime@7.4.5
+333 silly idealTree:prePrune ├── @fusioncharts/charts@3.15.0
+333 silly idealTree:prePrune ├── @fusioncharts/constructor@1.0.2
+333 silly idealTree:prePrune ├── @fusioncharts/core@1.0.2
+333 silly idealTree:prePrune ├── @fusioncharts/datatable@1.0.2
+333 silly idealTree:prePrune ├── @fusioncharts/features@1.0.2
+333 silly idealTree:prePrune ├── @fusioncharts/fusiontime@2.0.0
+333 silly idealTree:prePrune ├── @fusioncharts/maps@3.15.0
+333 silly idealTree:prePrune ├── @fusioncharts/powercharts@3.15.0-sr.1
+333 silly idealTree:prePrune ├── @fusioncharts/utils@1.0.2
+333 silly idealTree:prePrune ├── @fusioncharts/widgets@3.15.0
+333 silly idealTree:prePrune ├── chart.js@2.9.3
+333 silly idealTree:prePrune ├── chartjs-color-string@0.6.0
+333 silly idealTree:prePrune ├── chartjs-color@2.4.1
+333 silly idealTree:prePrune ├─┬ color-convert@1.9.3
+333 silly idealTree:prePrune │ └── color-name@1.1.3
+333 silly idealTree:prePrune ├── color-name@1.1.4
+333 silly idealTree:prePrune ├── core-js@3.6.1
+333 silly idealTree:prePrune ├── fusioncharts@3.15.0-sr.1
+333 silly idealTree:prePrune ├── moment@2.24.0
+333 silly idealTree:prePrune ├── mutationobserver-shim@0.3.3
+333 silly idealTree:prePrune ├── promise-polyfill@8.1.3
+333 silly idealTree:prePrune ├── ramda@0.25.0
+333 silly idealTree:prePrune └── regenerator-runtime@0.13.3
+334 silly loadIdealTree Finishing
+335 silly currentTree arafat
+335 silly currentTree ├── @babel/runtime@7.4.5
+335 silly currentTree ├── @fusioncharts/charts@3.15.0
+335 silly currentTree ├── @fusioncharts/constructor@1.0.2
+335 silly currentTree ├── @fusioncharts/core@1.0.2
+335 silly currentTree ├── @fusioncharts/datatable@1.0.2
+335 silly currentTree ├── @fusioncharts/features@1.0.2
+335 silly currentTree ├── @fusioncharts/fusiontime@2.0.0
+335 silly currentTree ├── @fusioncharts/maps@3.15.0
+335 silly currentTree ├── @fusioncharts/powercharts@3.15.0-sr.1
+335 silly currentTree ├── @fusioncharts/utils@1.0.2
+335 silly currentTree ├── @fusioncharts/widgets@3.15.0
+335 silly currentTree ├── core-js@3.6.1
+335 silly currentTree ├── fusioncharts@3.15.0-sr.1
+335 silly currentTree ├── mutationobserver-shim@0.3.3
+335 silly currentTree ├── promise-polyfill@8.1.3
+335 silly currentTree ├── ramda@0.25.0
+335 silly currentTree └── regenerator-runtime@0.13.3
+336 silly idealTree arafat
+336 silly idealTree ├── @babel/runtime@7.4.5
+336 silly idealTree ├── @fusioncharts/charts@3.15.0
+336 silly idealTree ├── @fusioncharts/constructor@1.0.2
+336 silly idealTree ├── @fusioncharts/core@1.0.2
+336 silly idealTree ├── @fusioncharts/datatable@1.0.2
+336 silly idealTree ├── @fusioncharts/features@1.0.2
+336 silly idealTree ├── @fusioncharts/fusiontime@2.0.0
+336 silly idealTree ├── @fusioncharts/maps@3.15.0
+336 silly idealTree ├── @fusioncharts/powercharts@3.15.0-sr.1
+336 silly idealTree ├── @fusioncharts/utils@1.0.2
+336 silly idealTree ├── @fusioncharts/widgets@3.15.0
+336 silly idealTree ├── chart.js@2.9.3
+336 silly idealTree ├── chartjs-color-string@0.6.0
+336 silly idealTree ├── chartjs-color@2.4.1
+336 silly idealTree ├─┬ color-convert@1.9.3
+336 silly idealTree │ └── color-name@1.1.3
+336 silly idealTree ├── color-name@1.1.4
+336 silly idealTree ├── core-js@3.6.1
+336 silly idealTree ├── fusioncharts@3.15.0-sr.1
+336 silly idealTree ├── moment@2.24.0
+336 silly idealTree ├── mutationobserver-shim@0.3.3
+336 silly idealTree ├── promise-polyfill@8.1.3
+336 silly idealTree ├── ramda@0.25.0
+336 silly idealTree └── regenerator-runtime@0.13.3
+337 silly generateActionsToTake Starting
+338 silly install generateActionsToTake
+339 warn checkPermissions Missing write access to /home/arafat/node_modules
+340 silly rollbackFailedOptional Starting
+341 silly rollbackFailedOptional Finishing
+342 silly runTopLevelLifecycles Starting
+343 silly runTopLevelLifecycles Finishing
+344 silly install printInstalled
+345 warn enoent ENOENT: no such file or directory, open '/home/arafat/package.json'
+346 warn arafat No description
+347 warn arafat No repository field.
+348 warn arafat No README data
+349 warn arafat No license field.
+350 verbose stack Error: EACCES: permission denied, access '/home/arafat/node_modules'
+351 verbose cwd /home/arafat/Documents/djangoprojet/ParcInfo
+352 error Linux 4.15.0-72-generic
+353 error argv "/usr/bin/node" "/usr/bin/npm" "install" "chart.js" "--save"
+354 error node v8.10.0
+355 error npm  v3.5.2
+356 error path /home/arafat/node_modules
+357 error code EACCES
+358 error errno -13
+359 error syscall access
+360 error Error: EACCES: permission denied, access '/home/arafat/node_modules'
+360 error  { Error: EACCES: permission denied, access '/home/arafat/node_modules'
+360 error   errno: -13,
+360 error   code: 'EACCES',
+360 error   syscall: 'access',
+360 error   path: '/home/arafat/node_modules' }
+361 error Please try running this command again as root/Administrator.
+362 verbose exit [ -13, true ]

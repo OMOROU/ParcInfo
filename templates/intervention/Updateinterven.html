@@ -1,0 +1,132 @@
+{% extends "base.html" %}{% load staticfiles %} {% block title %}
+<title>Intervention</title>{% endblock title %}{% block content %}
+<div class="container">
+
+    <br>
+    <br>
+    <div class="right_col" role="main">
+        <div class="">
+
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Enregistrement des Intervention</h3>
+                            <br>
+                            <br>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="x_panel">
+
+                                <div class="x_content">
+
+                                    <form class="form-horizontal form-label-left" method="POST" action="{%url 'intervention:updateinterven' intervention.id %}">
+                                        {%csrf_token%}
+
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3" for="first-name">Libelle de l'Intervention: <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-4 col-sm-4 ">
+                                                <input type="text" id="libelle_interv" required="required" name="libelle_interv" value="{{intervention.libelle_interv}}" class="form-control col-md-7 col-xs-12" onKeyPress="return verifieChar(event,0);">
+                                            </div>
+                                            <span class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3 " for="first-name">Date de l'Intervention: <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-4 col-sm-4 ">
+                                                <input type="date" id="date_interv" required="required" name="date_interv" value="{{intervention.date_interv}}" class="form-control col-md-7 col-xs-12" onKeyPress="return verifieChar(event,0);">
+                                            </div>
+                                            <span class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3 ">Statut panne :</label>
+                                            <div class="col-md-4 col-sm-4 ">
+                                                <input type="text" id="accomplie" required="required" name="accomplie" value="{{intervention.accomplie}}" class="form-control col-md-7 col-xs-12" onKeyPress="return verifieChar(event,0);">
+                                            </div>
+                                            <span class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12 ">Type d'Intervention :</label>
+                                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                                <select class="form-control" name="type_interv" value="{{intervention.type_interv}}">
+                                                <option>Selectionne !</option>
+                                                <option>En personne</option>
+                                                <option>En reseau</option>
+                                    
+                                              </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3 " for="first-name">Consigne de l'Intervention: <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-4 col-sm-4 ">
+                                                <input type="text" id="consigne" required="required" name="consigne" value="{{intervention.consigne}}" class="form-control col-md-7 col-xs-12" onKeyPress="return verifieChar(event,0);">
+                                            </div>
+                                            <span class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+                                        </div>
+
+                                        <div class="form-group row ">
+                                            <label class="control-label col-md-3 col-sm-3 " for="first-name ">Intervenant : <span class="required ">*</span>
+                                            </label>
+                                            <select class="form control " required id="nom_intervenant" name="intervenant" value={{intervention.intervenant}}>
+                                                {% for intervenant in intervenants %}
+                                            <option > {{intervenant}}</option>                         
+                                            {% endfor %}
+                                            </select>
+                                            <!-- <select id="id_departement" class=" control-label col-md-4 col-sm-4 row ">
+                                                {% for category in categories  %}
+                                                  <option value="{{ departement }} ">{{ departement.departement }}</option>
+                                                {% endfor %}
+                                              </select> -->
+                                            <span class="tooltip ">Un nom ne peut pas faire moins de 2 caractères</span>
+                                            <button class="btn btn-lg " style="background-color:red; color:green " onclick=window.location.href='http://127.0.0.1:8000/service/departement' ; value=departement>
+                                                <i class="fa fa-plus "></i> 
+                                             </button>
+                                        </div>
+
+                                        <div class="form-group row ">
+                                            <label class="control-label col-md-3 col-sm-3 " for="first-name ">Panne : <span class="required ">*</span>
+                                            </label>
+                                            <select class="form control " required id="libelle_pan" name="panne" value={{intervention.panne}}>
+                                                {% for panne in pannes %}
+                                            <option > {{panne}}</option>                         
+                                            {% endfor %}
+                                            </select>
+                                            <!-- <select id="id_departement" class=" control-label col-md-4 col-sm-4 row ">
+                                                {% for category in categories  %}
+                                                  <option value="{{ departement }} ">{{ departement.departement }}</option>
+                                                {% endfor %}
+                                              </select> -->
+                                            <span class="tooltip ">Un nom ne peut pas faire moins de 2 caractères</span>
+                                            <button class="btn btn-lg " style="background-color:red; color:green " onclick=window.location.href='http://127.0.0.1:8000/service/departement' ; value=departement>
+                                                <i class="fa fa-plus "></i> 
+                                             </button>
+                                        </div>
+                                        <div class="ln_solid"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-9 col-sm-9  offset-md-3">
+                                                <button type="button" class="btn btn-primary">Cancel</button>
+
+                                                <button type="submit" class="btn btn-success">Update</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,59 @@
+{
+    "chart": {
+        "caption": "Evolution des Pannes resolue par mois",
+        "yaxisname": "Le nombre d'intervention par mois",
+        "subcaption": "2018-2019",
+        "plottooltext": "<div><b>$dataValue</b> Pannes resolue en $label</div>",
+        "theme": "fusion"
+    },
+    "data": [{
+            "label": "Janvier",
+            "value": "1380000"
+        },
+        {
+            "label": "Fervier",
+            "value": "1450000"
+        },
+        {
+            "label": "Mars",
+            "value": "1610000"
+        },
+        {
+            "label": "Avril",
+            "value": "1540000"
+        },
+        {
+            "label": "Mai",
+            "value": "1480000"
+        },
+        {
+            "label": "Juin",
+            "value": "1573000"
+        },
+        {
+            "label": "Juillet",
+            "value": "2232000"
+        },
+        {
+            "label": "Aout",
+            "value": "2476000"
+        },
+        {
+            "label": "Septembre",
+            "value": "2832000"
+        },
+        {
+            "label": "Octobre",
+            "value": "3808000"
+        },
+        {
+            "label": "Novembre",
+            "value": "3808000"
+        },
+        {
+            "label": "Decembre",
+            "value": "3808000"
+        }
+
+    ]
+}

@@ -1,0 +1,120 @@
+{% extends "base.html" %}{% load staticfiles %} {% block title %}
+<title>Materiel</title>{% endblock title %}{% block content %}
+<div class="container">
+    <br />
+    <br />
+
+
+    <div class="right_col" role="main">
+        <div class="">
+
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>Enregistrement des Materiel</h3>
+                            <h3> </h3>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="clearfix"></div>
+
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="x_panel">
+
+                                <div class="x_content">
+
+                                    <form class="form-horizontal form-label-left" method="POST" action="{%url 'parc:add_materiel' %}">
+                                        {%csrf_token%}
+
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3" for="first-name">Nom Materiel: <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-4 col-sm-4 ">
+                                                <input type="text" id="name" required="required" name="name" value="{{parc.name}}" class="form-control col-md-7 col-xs-12" onKeyPress="return verifieChar(event,0);">
+                                            </div>
+                                            <span class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3" for="first-name">Numero Serie_Materiel: <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-4 col-sm-4 ">
+                                                <input type="text" id="numero_serie" required="required" name="numero_serie" value="{{parc.numero_serie}}" class="form-control col-md-7 col-xs-12" onKeyPress="return verifieChar(event,0);">
+                                            </div>
+                                            <span class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3" for="first-name">Caracteristique: <span class="required">*</span>
+                                            </label>
+                                            <div class="col-md-4 col-sm-4 ">
+                                                <textarea type="textarea" id="caracteristique" required="required" name="caracteristique" value="{{parc.caracteristique}}" class="form-control col-md-7 col-xs-12"></textarea>
+                                            </div>
+                                            <span class="tooltip">Un nom ne peut pas faire moins de 2 caractères</span>
+                                        </div>
+
+
+
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3" for="first-name">Bureau : <span class="required">*</span>
+                                            </label>
+                                            <select type="number" class="form control " required id="num_bureau" name="bureau" value={{materiel.bureau}}>
+                                                <option >-----------</option> 
+                                                {% for bureau in bureaux %}
+                                            <option >{{bureau}}</option>                         
+                                            {% endfor %}
+                                            </select>
+                                            <button class="btn btn-lg" style="background-color:red; color:green" onclick=window.location.href='http://127.0.0.1:8000/service/bureau' ; value=departement>
+                                                <i class="fa fa-plus"></i> 
+                                             </button>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3" for="first-name">Type_materiel : <span class="required">*</span>
+                                            </label>
+                                            <select class="form control " required id="libelle_materiel" name="type_materiel" value={{materiel.type_materiel}}>
+                                                <option >-----------</option> 
+                                                {% for type_materiel in type_materiels %}
+                                            <option >{{type_materiel}}</option>                         
+                                            {% endfor %}
+                                            </select>
+                                            <button class="btn btn-lg" style="background-color:red; color:green" onclick=window.location.href='http://127.0.0.1:8000/service/bureau' ; value=departement>
+                                                <i class="fa fa-plus"></i> 
+                                             </button>
+                                        </div>
+
+                                        <!-- <div class="form-group row">
+                                            <label class="control-label col-md-3 col-sm-3" for="first-name">Type_materiel : <span class="required">*</span>
+                                            </label>
+                                            <select class="form control " required id="libelle_materiel" name="type_materiel" value={{materiel.type_materiel}}>
+                                                {% for type_materiel in type_materiels %}
+                                            <option >{{type_materiel}}</option>                         
+                                            {% endfor %}
+                                            </select>
+                                            <button class="btn btn-lg" style="background-color:red; color:green" onclick=window.location.href='http://127.0.0.1:8000/parc/caracteristique' ; value=departement>
+                                                <i class="fa fa-plus"></i> 
+                                             </button>
+                                        </div> -->
+                                        <div class="ln_solid"></div>
+                                        <div class="form-group">
+                                            <div class="col-md-9 col-sm-9  offset-md-3">
+                                                <button type="button" class="btn btn-primary">Cancel</button>
+
+                                                <button type="submit" class="btn btn-success">Submit</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}

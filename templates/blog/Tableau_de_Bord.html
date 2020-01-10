@@ -1,0 +1,194 @@
+{% extends "base.html" %}{% load staticfiles %} {%block head %}
+<script src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+<script src="{% static 'fusioncharts/fusioncharts.js' %}"></script>
+<script src="{% static 'fusioncharts/themes/fusioncharts.theme.fint.js' %}"></script> {% endblock head %}{% block title %}
+
+<title>Tableau Bord</title>{% endblock title %}{% block content %}
+<div class="container">
+    <br />
+    <br />
+    <h3>Graphe de Rapport</h3>
+    <br />
+    <br />
+
+
+
+    <div id="chart-1">{{ output|safe }}</div>
+    <!-- dumping JavaScript code here -->
+
+
+    <br />
+    <br />
+
+
+
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Breadcrumbs-->
+            <h3>Tableau de bord </h3>
+            <br />
+            <br />
+
+
+            <!-- DataTables Example -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fa fa-table"></i> Tableau de rapport</div>
+                <br />
+                <br />
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead style="background-color:#C51201; color:white">
+                                <tr>
+                                    <th>Panne</th>
+                                    <th>Intervention</th>
+                                    <th>Intervenant</th>
+                                    <th>Date Intervention</th>
+                                    <th>Consigne</th>
+
+                                </tr>
+                            </thead>
+                            <tfoot style="background-color:#C51201; color:white">
+                                <tr>
+                                    <th>Panne</th>
+                                    <th>Intervention</th>
+                                    <th>Intervenant</th>
+                                    <th>Date Intervention</th>
+                                    <th>Consigne</th>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                {% for interventions in intervention %}
+                                <tr>
+                                    <td>{{interventions.panne}}</td>
+                                    <td>{{interventions.libelle_interv}}</td>
+                                    <td>{{interventions.intervenant}}</td>
+                                    <td>{{interventions.date_interv}}</td>
+                                    <td>{{interventions.consigne}}</td>
+
+                                </tr>
+                            </tbody>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{% static 'sb/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'sb/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{% static 'sb/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="{% static 'sb/vendor/chart.js/Chart.min.js' %}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{% static 'sb/js/sb-admin.min.js' %}"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="{% static 'sb/js/demo/chart-area-demo.js' %}"></script>
+    <script src="{% static 'sb/js/demo/chart-bar-demo.js' %}"></script>
+    <script src="{% static 'sb/js/demo/chart-pie-demo.js' %}"></script>
+
+    <script type="text/javascript" src="{% static 'fusioncharts/fusioncharts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fusioncharts/fusioncharts.charts.js' %}"></script>
+    <script type="text/javascript" src="{% static 'fusioncharts/themes/fusioncharts.theme.fusion.js' %}"></script>
+
+    </body>
+
+    </html>
+
+
+</div>
+{% endblock content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card ">
+                <div class="card-header">
+                    <h3>Line Series</h3>
+                </div>
+                <div class="card-block">
+                    <div id="chart1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card ">
+                <div class="card-header">
+                    <h3>Multiple Line Series</h3>
+                </div>
+                <div id="chart2" class="card-block">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+</style>
+
+<script type="text/javascript">
+    jQuery(function($) {
+        var data1 = [12, 3, 4, 2, 12, 3, 4, 17, 22, 34, 54, 67];
+        var data2 = [3, 9, 12, 14, 22, 32, 45, 12, 67, 45, 55, 7];
+        var data3 = [23, 19, 11, 134, 242, 352, 435, 22, 637, 445, 555, 57];
+
+        $(function() {
+            $("#chart1").shieldChart({
+                exportOptions: {
+                    image: false,
+                    print: false
+                },
+                axisY: {
+                    title: {
+                        text: "Break-Down for selected quarter"
+                    }
+                },
+                dataSeries: [{
+                    seriesType: "line",
+                    data: data1
+                }]
+            });
+
+            $("#chart2").shieldChart({
+                exportOptions: {
+                    image: false,
+                    print: false
+                },
+                axisY: {
+                    title: {
+                        text: "Break-Down for selected quarter"
+                    }
+                },
+                dataSeries: [{
+                    seriesType: "line",
+                    data: data2
+                }, {
+                    seriesType: "line",
+                    data: data3
+                }]
+            });
+
+
+        });
+
+    });
+</script>

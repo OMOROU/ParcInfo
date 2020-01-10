@@ -1,0 +1,82 @@
+{% extends "base.html" %}{% load staticfiles %} {% block title %}
+<title> Liste des Interventions</title>{% endblock title %}{% block content %}
+<div class="container">
+    <br />
+    <br />
+    <div class="col-md-12 col-sm-12  ">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>liste des Interventions</h2>
+                <div class="add-product">
+                    <a href="{% url 'intervention:intervention' %}">Ajouter Intervention</a>
+                </div>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <h2> </h2>
+            <div class="x_content">
+                <br />
+                <div class="table-responsive">
+                    <table class="table table-striped jambo_table bulk_action">
+                        <thead>
+                            <tr class="headings">
+                                <th>
+                                    <input type="checkbox" id="check-all" class="flat">
+                                </th>
+                                <th class="column-title">#</th>
+                                <th class="column-title">Libelle de l'intervention </th>
+                                <th class="column-title">Date de l'intervention</th>
+                                <th class="column-title">Statut</th>
+                                <th class="column-title">Type d'intervention</th>
+                                <th class="column-title">Consigne</th>
+                                <th class="column-title">Intervenant</th>
+                                <th class="column-title">Panne</th>
+
+
+                                <th class="column-title no-link last"><span class="nobr">Action</span>
+                                </th>
+                                <th class="bulk-actions" colspan="7">
+                                    <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                                </th>
+                            </tr>
+                        </thead>
+                        {% for interventions in intervention %}
+
+                        <tbody>
+                            <tr class="odd pointer">
+                                <td class="a-center ">
+                                    <input type="checkbox" class="flat" name="table_records">
+                                </td>
+                                <td class=" "></td>
+                                <td class=" ">{{interventions.libelle_interv}}</td>
+                                <td class=" ">{{interventions.date_interv}}</td>
+                                <td class=" ">{{interventions.accomplie}}</td>
+                                <td class=" ">{{interventions.type_interv}}</td>
+                                <td class=" ">{{interventions.consigne}}</td>
+                                <td class=" ">{{interventions.intervenant}}</td>
+                                <td class=" ">{{interventions.panne}}</td>
+                                <td class=" btn btn-primary waves-effect waves-light m-r-10">
+
+                                    <ul>
+                                        <a href="{% url 'intervention:oneinterven' interventions.id %}">Update|</a>
+                                        <a href="{% url 'intervention:oneintervendel' interventions.id %}">Delete</a>
+                                    </ul>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

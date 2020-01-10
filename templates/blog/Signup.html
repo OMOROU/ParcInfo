@@ -1,0 +1,13 @@
+{% extends "base.html" %}{% load staticfiles %} {% block title %}
+<title>Contact</title>{% endblock title %}{% block content %}
+<div class="container">
+    h2>Sign up Form</h2>
+    <form method="post" role="form" action="{%url 'userprofile:signup' %}">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Utilisateur">
+        <input type="password" name="password" placeholder="Mot de passe">
+        <input type="submit" value="login" />
+    </form>
+</div>
+
+{% endblock content %}
