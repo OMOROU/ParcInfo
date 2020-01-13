@@ -17,6 +17,11 @@ from django.urls import include, path
 from django.contrib import admin
 
 
+from django.conf.urls.static import static
+from django.conf import settings
+
+
+
 
 urlpatterns = [
     path('parc/', include('parc.urls')),
@@ -25,7 +30,7 @@ urlpatterns = [
     path('userprofile/', include('userprofile.urls')),
     path('intervention/', include('intervention.urls')),
     path('service/', include('service.urls')),
-    
+
     path('admin/', admin.site.urls),
 ]
 

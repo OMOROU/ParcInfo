@@ -22,6 +22,8 @@ urlpatterns = [
     path('listintervention', blog.listintervention, name='listintervention'),
     
     path('add_email', blog.add_email, name='add_email'),
+   # path('ChatConsumer', blog.ChatConsumer, name='ChatConsumer'),
+  
   
     #path('successview/', blog.successview, name='successview'),
     
