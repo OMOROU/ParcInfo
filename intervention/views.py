@@ -132,6 +132,7 @@ def add_panne(request):
         panne = Panne(
             libelle_pan = request.POST.get("libelle_pan"),
             description = request.POST.get("description"),
+            niveau = request.POST.get("niveau"),
             type_panne = type_panne,
             intervenant = intervenant,
             materiel = materiel,
@@ -166,6 +167,7 @@ def updatepan(request, id):
             id = id,
             libelle_pan = request.POST.get("libelle_pan"),
             description = request.POST.get("description"),
+            niveau = request.POST.get("niveau"),
             type_panne = type_panne,
             intervenant = intervenant,
             materiel = materiel,

@@ -12,7 +12,7 @@ class Type_panneForm(ModelForm):
 class PanneForm(ModelForm):
     class Meta:
         model = Panne
-        fields = ('description', 'type_panne', 'intervenant', 'materiel')
+        fields = ('description', 'niveau', 'type_panne', 'intervenant', 'materiel')
         
         
   

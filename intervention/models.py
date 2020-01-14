@@ -23,10 +23,10 @@ class Type_panne(models.Model):
     
 
 
-
 class Panne(models.Model):
     libelle_pan = models.CharField("libelle de la panne", max_length=100, blank=True, null=True)
     description = models.CharField("description de la panne",max_length=100, blank=True, null=True)
+    niveau = models.CharField("Niveau de la panne",max_length=100, blank=True, null=True)
     type_panne = models.ForeignKey(Type_panne, related_name='type_panne', on_delete=models.CASCADE, blank=True, null=True)
     intervenant =  models.ForeignKey(Intervenant, verbose_name='intervenant', on_delete=models.CASCADE, blank=True, null=True)
     materiel =  models.ForeignKey(Materiel, verbose_name='materiel', on_delete=models.CASCADE, blank=True, null=True)

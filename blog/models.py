@@ -47,6 +47,7 @@ class Contact(models.Model):
     
 class Email(models.Model):
     name = models.CharField(("Full name "), max_length=100, blank=True, null=True)
+    degree = models.CharField(("Degre "), max_length=100, blank=True, null=True)
     Subject = models.CharField(("Prenom "), max_length=100, blank=True, null=True)
     message = models.CharField(("nom "), max_length=100, blank=True, null=True)
     

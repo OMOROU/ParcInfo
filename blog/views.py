@@ -175,6 +175,7 @@ def add_email (request):
     if request.method == 'POST':
         email= Email(
             name = request.POST.get("name"),
+            degree = request.POST.get("degree"),
             Subject = request.POST.get("Subject"),  
             message = request.POST.get("message"),           
         )
