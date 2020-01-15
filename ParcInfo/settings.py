@@ -136,15 +136,15 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR,"static"),
 ]
 
 
-LOGIN_REDIRECT_URL = '/accueil/'
-LOGIN_URL = '/signup/'
+LOGIN_REDIRECT_URL = 'blog/contact/'
+LOGIN_URL = 'signup'
 TEMPLATE_DIRS = (
     BASE_DIR + '/templates/',
 )
 
-LOGIN_REDIRECT_URL = '/contact/'
+LOGIN_REDIRECT_URL = 'blog/contact/'
 
-LOGOUT_REDIRECT_URL = 'accueil'
+LOGOUT_REDIRECT_URL = 'blog/accueil'
 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

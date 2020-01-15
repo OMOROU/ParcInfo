@@ -1,4 +1,4 @@
- {% load staticfiles %}
+{% load staticfiles %}
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -76,47 +76,44 @@
     {% block sidebar %} {% endblock sidebar %}
 
     <div class="left-sidebar-pro">
+        <nav id="sidebar">
 
-    </div>
-    <nav id="sidebar">
-
-        <div class="left-custom-menu-adp-wrap comment-scrollbar">
-            <nav class="sidebar-nav left-sidebar-menu-pro hide">
-                <ul class="metismenu" id="menu1">
-                    <li class="active">
-                        <a class="has-arrow " aria-expanded="false" href="#">
-                            <i class="fa big-icon fa-home icon-wrap"></i>
-                            <span class="mini-click-non">Projet</span>
-                        </a>
-                        <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="Interventions" href="{% url 'blog:listintervention' %}"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro" >Intervention</span></a></li>
-                            <li><a title="Parcs" href="{% url 'blog:listparc' %}"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Parc</span></a></li>
-                            <li><a title="Service" href="{% url 'blog:listservice' %}"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Service</span></a></li>
+            <div class="left-custom-menu-adp-wrap comment-scrollbar">
+                <nav class="sidebar-nav left-sidebar-menu-pro">
+                    <ul class="metismenu" id="menu1">
+                        <li class="passive">
+                            <a class="has-arrow " aria-expanded="false" href="#">
+                                <i class="fa big-icon fa-home icon-wrap"></i>
+                                <span class="mini-click-non">Projet</span>
+                            </a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Interventions" href="{% url 'blog:listintervention' %}"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro" >Intervention</span></a></li>
+                                <li><a title="Parcs" href="{% url 'blog:listparc' %}"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Parc</span></a></li>
+                                <li><a title="Service" href="{% url 'blog:listservice' %}"><i class="fa fa-bullseye sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Service</span></a></li>
 
 
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="has-arrow " href="#" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Gestion Parc</span></a>
-                        <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="Ajouter Materiel" href="{% url 'parc:materiel' %}"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Materiel</span></a></li>
-                            <li><a title="Voir rapport" href="{% url 'blog:dashboard' %}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Rapport</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="has-arrow " href="#" aria-expanded="false"><i class="fa big-icon fa-envelope icon-wrap"></i> <span class="mini-click-non">Gestion Parc</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Ajouter Materiel" href="{% url 'parc:materiel' %}"><i class="fa fa-television sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Materiel</span></a></li>
+                                <li><a title="Voir rapport" href="{% url 'blog:dashboard' %}"><i class="fa fa-inbox sub-icon-mg" aria-hidden="true"></i> <span class="mini-sub-pro">Rapport</span></a></li>
 
-                        </ul>
-                    </li>
-                    <li id="removable">
-                        <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa big-icon fa-files-o icon-wrap"></i> <span class="mini-click-non">Pages</span></a>
-                        <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="Accueil" href="{% url 'blog:accueil' %}"><i class="fa fa-hand-rock-o sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Accueil</span></a></li>
-                            <li><a title="Tableau de Bord" href="{% url 'blog:dashboard' %}"><i class="fa fa-plane sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Tableau de Bord</span></a></li>
-                            <li><a title="Forum" href="{% url 'blog:forum' %}"><i class="fa fa-file sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Forum</span></a></li>
-                            <li><a title="Contact" href="{% url 'blog:contact' %}"><i class="fa fa-wheelchair sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Contact</span></a></li>
-                        </ul>
+                            </ul>
+                        </li>
+                        <li id="removable">
+                            <a class="has-arrow " href="#" aria-expanded="false"><i class="fa big-icon fa-files-o icon-wrap"></i> <span class="mini-click-non">Pages</span></a>
+                            <ul class="submenu-angle" aria-expanded="false">
+                                <li><a title="Accueil" href="{% url 'blog:accueil' %}"><i class="fa fa-hand-rock-o sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Accueil</span></a></li>
+                                <li><a title="Tableau de Bord" href="{% url 'blog:dashboard' %}"><i class="fa fa-plane sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Tableau de Bord</span></a></li>
+                                <li><a title="Forum" href="{% url 'blog:forum' %}"><i class="fa fa-file sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Forum</span></a></li>
+                                <li><a title="Contact" href="{% url 'blog:contact' %}"><i class="fa fa-wheelchair sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Contact</span></a></li>
+                            </ul>
 
-            </nav>
-        </div>
-
-    </nav>
+                </nav>
+            </div>
+        </nav>
     </div>
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
@@ -147,7 +144,7 @@
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="{% url 'blog:accueil' %}" class="nav-link">Accueil</a>
+                                                <li class="nav-item"><a href="{% url 'blog:accueill' %}" class="nav-link">Accueil</a>
                                                 </li>
                                                 <li class="nav-item"><a href="{% url 'blog:dashboard' %}" class="nav-link">Tableau Bord</a>
                                                 </li>

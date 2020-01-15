@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm 
+from django.contrib import auth
 from collections import OrderedDict
 from blog.fusioncharts import FusionCharts
 from django.views import generic
@@ -120,6 +121,11 @@ def index (request):
    
     return render(request, 'blog/Index.html')
 
+def accueill (request):
+    
+   
+    return render(request, 'blog/Accueil1.html')
+
 
 def accueil (request):
     return render(request, 'blog/Accueil.html')
@@ -150,24 +156,47 @@ def login (request):
 
 
 
+# def signup(request):
+#     form = UserCreationForm(request.POST)
+#     if form.is_valid():
+#         form.save()
+#         username = form.cleaned_data.get('username')
+#         password = form.cleaned_data.get('password1')
+#         user = authenticate(username=username, password=password)
+#         login(request, user)
+#         if user:  # Si l'objet renvoyé n'est pas None
+#                 login(request, user)  # nous connectons l'utilisateur
+#                 return HttpResponseRedirect('/blog/login')
+#         else:  # sinon une erreur sera affichée
+#                 error = True
+#         return  redirect('blog/inscription')
+#     form = AuthenticationForm() 
+#     return render(request, 'blog/Login.html', {'form': form})
+
+
+ 
 def signup(request):
-    form = UserCreationForm(request.POST)
-    if form.is_valid():
-        form.save()
-        username = form.cleaned_data.get('username')
-        password = form.cleaned_data.get('password1')
-        user = authenticate(username=username, password=password)
-        login(request, user)
-        if user:  # Si l'objet renvoyé n'est pas None
-                login(request, user)  # nous connectons l'utilisateur
-                return HttpResponseRedirect('/blog/contact')
-        else:  # sinon une erreur sera affichée
-                error = True
-        return  redirect('inscription')
-    form = AuthenticationForm() 
-    return render(request, 'blog/Login.html', {'form': form})
-
-
+   
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = auth.authenticate(username=username, password=password)
+ 
+        if user is not None:
+            # correct username and password login the user
+            auth.login(request, user)
+            return redirect('/blog/signin')
+ 
+        else:
+            messages.error(request, 'Error wrong username/password')
+ 
+    return render(request, 'blog/Login.html')
+ 
+ 
+def signin(request):
+    auth.logout(request)
+    return render(request,'blog/Logout.html')
+ 
 
 
 def add_email (request):   
