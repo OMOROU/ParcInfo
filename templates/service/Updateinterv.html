@@ -1,4 +1,4 @@
-{% extends "base.html" %}{% load staticfiles %} {% block title %}
+{% extends "base1.html" %}{% load staticfiles %} {% block title %}
 <title>Intervenant</title>{% endblock title %}{% block content %}
 <div class="container">
     <br />
@@ -34,7 +34,7 @@
                                             <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Nom de l'intervenant: <span class="required">*</span>
                               </label>
                                             <div class="col-md-6 col-sm-6">
-                                                <input  type="text" id="nom_intervenant" class="form-control" data-validate-length-range="6" data-validate-words="2" name="nom_intervenant" value="{{intervenant.nom_intervenant}}" required="required" >
+                                                <input type="text" id="nom_intervenant" class="form-control" data-validate-length-range="6" data-validate-words="2" name="nom_intervenant" value="{{intervenant.nom_intervenant}}" required="required">
                                             </div>
                                         </div>
                                         <div class="form-group row">

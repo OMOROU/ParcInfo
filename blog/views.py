@@ -1,10 +1,14 @@
 from django.core.mail import BadHeaderError, EmailMessage
 from django.shortcuts import render, get_object_or_404, redirect, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect,JsonResponse
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.urls import reverse
+from datetime import datetime
 from django.contrib.auth.models import User
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, get_user_model
 from django.contrib.auth.forms import UserCreationForm
+from .forms import CustomUserCreationForm
 from django.contrib.auth.forms import AuthenticationForm 
 from django.contrib import auth
 from collections import OrderedDict
@@ -13,14 +17,14 @@ from django.views import generic
 from service.models import Bureau, Intervenant
 from intervention.models import Intervention, Panne
 from .models import Email
-from .forms import EmailForm, forms
+from .forms import EmailForm, ChatForm,  forms
 
 from .models import Article
 # from asgiref.sync import async_to_sync
-# from channels.generic.websocket import WebsocketConsumer
-# import json
+# from channels.generic.chat import WebsocketConsumer
+import json
 # from chat.core.models.user import User
-# from chat.core.models.message import Message
+#from chat.core.models.message import Message
 
 
 # class ChatConsumer(WebsocketConsumer):
@@ -155,27 +159,51 @@ def login (request):
     return render(request, 'blog/Login.html')
 
 
+def logout (request):
+    return render(request, 'blog/Accueil.html')
 
-# def signup(request):
-#     form = UserCreationForm(request.POST)
-#     if form.is_valid():
-#         form.save()
-#         username = form.cleaned_data.get('username')
-#         password = form.cleaned_data.get('password1')
-#         user = authenticate(username=username, password=password)
-#         login(request, user)
-#         if user:  # Si l'objet renvoyé n'est pas None
-#                 login(request, user)  # nous connectons l'utilisateur
-#                 return HttpResponseRedirect('/blog/login')
-#         else:  # sinon une erreur sera affichée
-#                 error = True
-#         return  redirect('blog/inscription')
-#     form = AuthenticationForm() 
-#     return render(request, 'blog/Login.html', {'form': form})
+  #===================================== Chat views ================================
+  
+def generalchat(request):
+        c = Chat.objects.all()
+        documents = Document.objects.all() #file upload
+        return render(request, "channels/Forum.html", {'generalchat': 'active', 'chat': c, 'documents': documents})
+
+  
+def post(request):
+    if request.method == "POST":
+        msg = request.POST.get('msgbox', None)
+        time = datetime.now()
+        c = Chat(user=request.user, message=msg, created=time)
+
+        c = Chat(user=request.user, message=msg)
+
+        if msg != '':            
+           c.save()
+        return JsonResponse({ 'msg': msg, 'user': c.user.username})
+    else:
+       return HttpResponse('Request must be POST.')
+   
 
 
+def uploads(request):
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('forum')
+    else:
+       form = DocumentForm()
+       return render(request, 'channels/uploads.html', {
+    'form': form
+    })
+
+  #============================= Login and register views =========================
  
 def signup(request):
+    # if request.user.is_authenticated:
+    #     return redirect('blog:signin', username=request.user.username)
+ 
    
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -185,7 +213,7 @@ def signup(request):
         if user is not None:
             # correct username and password login the user
             auth.login(request, user)
-            return redirect('/blog/signin')
+            return redirect('/blog/accueill')
  
         else:
             messages.error(request, 'Error wrong username/password')
@@ -195,8 +223,22 @@ def signup(request):
  
 def signin(request):
     auth.logout(request)
-    return render(request,'blog/Logout.html')
+    return redirect('/blog/accueil')
+   
  
+ 
+def register(request):
+    if request.method == 'POST':
+        f = CustomUserCreationForm(request.POST)
+        if f.is_valid():
+            f.save()
+            messages.success(request, 'Account created successfully')
+            return redirect('/login')
+ 
+    else:
+        f = CustomUserCreationForm()
+ 
+    return render(request, 'blog/Inscription.html', {'form': f})
 
 
 def add_email (request):   

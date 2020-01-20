@@ -7,7 +7,7 @@ from parc.models import Materiel
 from intervention.models import Intervention, Panne
 from service.models import Bureau, Departement, Intervenant
 
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, User
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils import timezone
 
@@ -64,29 +64,18 @@ class Email(models.Model):
     
       #============================= Midels de chat ==================================
       
-# @python_2_unicode_compatible
-# class User(AbstractUser):
+class Chat(models.Model):
+    created = models.DateTimeField(auto_now_add=True)
+    #timeNow = models.DateTimeField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    message = models.TextField()
+    file_upload = models.FileField()
+    class Meta:
+        verbose_name_plural = "general Chat"
+    
 
-#     last_read_date = models.DateTimeField(
-#         auto_now_add=True,
-#         blank=False,
-#         null=False
-#     )
-#     online = models.BooleanField(null=False, blank=False, default=False)
-
-#     REQUIRED_FIELDS = []
-
-#     def __str__(self):
-#         return self.username
-
-#     def read(self):
-#         self.last_read_date = timezone.now()
-#         self.save()
-
-#     def unread_messages(self):
-#         return Message.objects.filter(created_at__gt=self.last_read_date) \
-#                               .count()
-      
+    def __unicode__(self):
+        return self.message
       
       
 def validate_message_content(content):

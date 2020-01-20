@@ -12,6 +12,16 @@
             </div>
         </div>
     </div>
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <h1>Create account - The Great Django Blog</h1>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12"></div>
@@ -22,34 +32,29 @@
                 </div>
                 <div class="hpanel">
                     <div class="panel-body">
-                        <form action="#" id="loginForm">
+                        <form id="register" method="POST" role="form" action="{%url 'blog:register' %}">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="form-group col-lg-12">
-                                    <label>Username</label>
-                                    <input class="form-control">
+                                    <label class="control-label" name="username" for="username">Username</label>
+                                    <input type="text" placeholder="example@gmail.com" title="Please enter you username" required="" value="{{Users.username}}" name="username" id="username" class="form-control">
+
                                 </div>
                                 <div class="form-group col-lg-6">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control">
+                                    <label class="control-label" name="password" for="password">Password</label>
+                                    <input type="password" title="Please enter your password" placeholder="******" required="" value="{{Users.password}}" name="password" id="password" class="form-control">
+
                                 </div>
                                 <div class="form-group col-lg-6">
                                     <label>Repeat Password</label>
-                                    <input type="password" class="form-control">
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label>Email Address</label>
-                                    <input class="form-control">
-                                </div>
-                                <div class="form-group col-lg-6">
-                                    <label>Repeat Email Address</label>
-                                    <input class="form-control">
+                                    <input type="password" title="Please enter your password" placeholder="******" required="" value="{{Users.password}}" name="password" id="password" class="form-control">
                                 </div>
                                 <div class="checkbox col-lg-12">
                                     <input type="checkbox" class="i-checks" checked> Sigh up for our newsletter
                                 </div>
                             </div>
                             <div class="text-center">
-                                <button class="btn btn-success loginbtn" href="{% url 'blog:login' %}">Register</button>
+                                <button class="btn btn-success loginbtn" id="send" type="submit" name="inscription">Register</button>
                                 <button class="btn btn-default">Cancel</button>
                             </div>
                         </form>

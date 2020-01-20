@@ -78,12 +78,14 @@
     <div class="left-sidebar-pro">
 
     </div>
+
     <nav id="sidebar">
 
         <div class="left-custom-menu-adp-wrap comment-scrollbar">
-            <nav class="sidebar-nav left-sidebar-menu-pro hide">
+            <!-- {% if user.is_authenticated %}
+            <nav class="sidebar-nav left-sidebar-menu-pro">
                 <ul class="metismenu" id="menu1">
-                    <li class="active">
+                    <li class="passive">
                         <a class="has-arrow " aria-expanded="false" href="#">
                             <i class="fa big-icon fa-home icon-wrap"></i>
                             <span class="mini-click-non">Projet</span>
@@ -112,11 +114,19 @@
                             <li><a title="Forum" href="{% url 'blog:forum' %}"><i class="fa fa-file sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Forum</span></a></li>
                             <li><a title="Contact" href="{% url 'blog:contact' %}"><i class="fa fa-wheelchair sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">Contact</span></a></li>
                         </ul>
+                        <div class="content">
+                            <div class="section-inner clearfix">
 
+                                <p>You are logged out. <a href="{% url 'blog:index' %}">Click here</a> to login again.</p>
+
+                            </div>
+                        </div>
             </nav>
+            {% endif %} -->
         </div>
 
     </nav>
+
     </div>
     <!-- Start Welcome area -->
     <div class="all-content-wrapper">
@@ -271,6 +281,9 @@
                                                     </a>
                                                     <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
                                                         <li><a href="{% url 'blog:login' %}"><span class="fa fa-home author-log-ic"></span>Login</a>
+                                                        </li>
+
+                                                        <li><a href="{% url 'blog:logout' %}"><span class="fa fa-user author-log-ic"></span>Logout </a>
                                                         </li>
                                                         <li><a href="{% url 'blog:lock' %}"><span class="fa fa-user author-log-ic"></span>Lock </a>
                                                         </li>
@@ -815,5 +828,7 @@
     <script src="{% static 'js/main.js' %}"></script>
     {% endblock script %}
 </body>
+
+</html>
 
 </html>
