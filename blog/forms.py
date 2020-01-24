@@ -4,6 +4,7 @@ from .models import Email, Contact, Chat
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from blog.models import UserProfileInfo
  
 
 class ContactForm(forms.Form):
@@ -63,3 +64,22 @@ class CustomUserCreationForm(forms.Form):
             self.cleaned_data['password1']
         )
         return user
+    
+class SignUpForm(UserCreationForm):
+    
+
+    class Meta:
+        model = User
+        fields = ('username', 'password1', 'password2',)
+        
+
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+    class Meta():
+        model = User
+        fields = ('username','password','email')
+        
+class UserProfileInfoForm(forms.ModelForm):
+    class Meta():
+        model = UserProfileInfo
+        fields = ('portfolio_site','profile_pic')

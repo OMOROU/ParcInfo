@@ -11,6 +11,10 @@ from django.contrib.auth.models import AbstractUser, User
 from django.utils.encoding import python_2_unicode_compatible
 from django.utils import timezone
 
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+
 
 
 #Create your models here.
@@ -107,3 +111,14 @@ class Message(models.Model):
 
     def last_50_messages():
         return Message.objects.order_by('-created_at').all()[:50]
+    
+    
+    
+class UserProfileInfo(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    portfolio_site = models.URLField(blank=True)
+    profile_pic = models.ImageField(upload_to='profile_pics',blank=True)
+    
+    
+    def __str__(self):
+        return self.user.username
